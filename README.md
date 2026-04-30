@@ -9,9 +9,9 @@ Das Spiel ** ist ein klassisches TowerDefense Spiel in welchem man man sich mit 
 - Mitwirken
 
 ## Installation
-git clone **
-cd projekt
-nmp install
+- git clone **
+- cd projekt
+- nmp install
 
 ## Nutzung
 nmp start
