@@ -8,24 +8,20 @@ import greenfoot.*;
 public class Weg extends Tile  
 {
     // instance variables - replace the example below with your own
-    private int x;
-
     /**
      * Constructor for objects of class Weg
      */
-    public Weg()
-    {
+    public Weg(int size) {
+        super(size);
+        drawTile();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    private void drawTile() {
+        GreenfootImage img = new GreenfootImage(size, size);
+        img.setColor(new Color(139, 69, 19));
+        img.fill();
+        img.setColor(Color.BLACK);
+        img.drawRect(0, 0, size - 1, size - 1);
+        setImage(img);
     }
 }
