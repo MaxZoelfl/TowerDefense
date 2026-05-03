@@ -14,6 +14,7 @@ public class Weg extends Tile
     public Weg(int size) {
         super(size);
         drawTile(new Color(139, 69, 19));
+        setzeBesetzt(true);
     }
 
 }

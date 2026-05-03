@@ -7,7 +7,8 @@ import greenfoot.*;
  */
 public class Tile extends Actor {
     protected int size;
-
+    private boolean besetzt;
+    
     /**
      * Constructor for objects of class Tile
      */
@@ -23,5 +24,12 @@ public class Tile extends Actor {
         img.drawRect(0, 0, size - 1, size - 1);
         setImage(img);
     }
-        
+    
+    public boolean istBesetzt() {
+        return besetzt;
+    }
+    
+    public void setzeBesetzt(boolean besetzt) {
+        this.besetzt = besetzt;
+    }
 }
