@@ -8,15 +8,17 @@ import greenfoot.*;
 public class Tower extends Actor
 {
     // instance variables - replace the example below with your own
-    private int range;
-    private int damage;
-    private int cooldown;
+    protected int range;
+    protected int damage;
+    protected int cooldown;
 
     /**
      * Constructor for objects of class Tower
      */
-    public Tower()
-    {
+    public Tower(int range, int damage, int cooldown){
+        this.range = range;
+        this.damage = damage;
+        this.cooldown = cooldown;
     }
-
+    
 }

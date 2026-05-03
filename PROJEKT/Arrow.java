@@ -9,6 +9,11 @@ import greenfoot.*;
  */
 public class Arrow extends Tower
 {
+    
+    public Arrow() {
+        super(128, 10, 32);
+    }
+    
     /**
      * Act - do whatever the Arrow wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

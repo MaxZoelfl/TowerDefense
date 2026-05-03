@@ -11,6 +11,11 @@ import greenfoot.*;
  */
 public class Sniper extends Tower
 {
+    
+    public Sniper() {
+        super(192, 50, 64);
+    }
+    
     /**
      * Act - do whatever the Sniper wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
