@@ -13,15 +13,7 @@ public class Weg extends Tile
      */
     public Weg(int size) {
         super(size);
-        drawTile();
+        drawTile(new Color(139, 69, 19));
     }
-    
-    private void drawTile() {
-        GreenfootImage img = new GreenfootImage(size, size);
-        img.setColor(new Color(139, 69, 19));
-        img.fill();
-        img.setColor(Color.BLACK);
-        img.drawRect(0, 0, size - 1, size - 1);
-        setImage(img);
-    }
+
 }

@@ -13,15 +13,6 @@ public class Gras extends Tile
      */
     public Gras(int size) {
         super(size);
-        drawTile();
-    }
-    
-    private void drawTile() {
-        GreenfootImage img = new GreenfootImage(size, size);
-        img.setColor(new Color(80, 180, 90));
-        img.fill();
-        img.setColor(Color.BLACK);
-        img.drawRect(0, 0, size - 1, size - 1);
-        setImage(img);
+        drawTile(new Color(80, 180, 90));
     }
 }

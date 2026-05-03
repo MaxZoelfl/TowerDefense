@@ -13,7 +13,15 @@ public class Tile extends Actor {
      */
     public Tile(int size) {
         this.size = size;
-        getImage().scale(size, size);
     }
 
+    public void drawTile(Color fillColor) {
+        GreenfootImage img = new GreenfootImage(size, size);
+        img.setColor(fillColor);
+        img.fill();
+        img.setColor(Color.BLACK);
+        img.drawRect(0, 0, size - 1, size - 1);
+        setImage(img);
+    }
+        
 }

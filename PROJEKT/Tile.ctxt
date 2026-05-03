@@ -4,4 +4,6 @@ comment0.text=\n\ Write\ a\ description\ of\ class\ Tile\ here.\n\ \n\ @author\ 
 comment1.params=size
 comment1.target=Tile(int)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Tile\n
-numComments=2
+comment2.params=fillColor
+comment2.target=void\ drawTile(greenfoot.Color)
+numComments=3
