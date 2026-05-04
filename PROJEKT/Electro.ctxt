@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Electro
 comment0.text=\n\ Huge\ Chain\ Damage\n\ Medium\ Range\ \n\ Medium\ Damage\ \n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Electro()
+comment1.params=size
+comment1.target=Electro(int)
 comment2.params=
 comment2.target=void\ act()
 comment2.text=\n\ Act\ -\ do\ whatever\ the\ Electro\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n

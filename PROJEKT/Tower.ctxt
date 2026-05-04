@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=Tower
 comment0.text=\n\ Write\ a\ description\ of\ class\ Tower\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=range\ damage\ cooldown
-comment1.target=Tower(int,\ int,\ int)
+comment1.params=range\ damage\ cooldown\ size
+comment1.target=Tower(int,\ int,\ int,\ int)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Tower\n
-numComments=2
+comment2.params=
+comment2.target=void\ drawTower()
+numComments=3

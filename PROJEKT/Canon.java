@@ -10,8 +10,8 @@ import greenfoot.*;
 public class Canon extends Tower
 {
 
-    public Canon() {
-        super(96, 30, 48);
+    public Canon(int size) {
+        super(96, 30, 48, size);
     }
     
     /**

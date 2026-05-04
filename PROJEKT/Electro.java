@@ -10,8 +10,8 @@ import greenfoot.*;
 public class Electro extends Tower
 {
     
-    public Electro() {
-        super(128, 20, 40);
+    public Electro(int size) {
+        super(128, 20, 40, size);
     }
     
     /**

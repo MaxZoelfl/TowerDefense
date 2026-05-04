@@ -10,8 +10,8 @@ import greenfoot.*;
 public class Arrow extends Tower
 {
     
-    public Arrow() {
-        super(128, 10, 32);
+    public Arrow(int size) {
+        super(128, 10, 32, size);
     }
     
     /**

@@ -15,6 +15,6 @@ public class Gras extends Tile
     public Gras(int size) {
         super(size);
         drawTile(new Color(80, 180, 90));
-        setzeBesetzt(false);
+        setzeBebaubar(false);
     }
 }

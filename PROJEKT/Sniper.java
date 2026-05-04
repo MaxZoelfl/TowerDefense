@@ -12,8 +12,8 @@ import greenfoot.*;
 public class Sniper extends Tower
 {
     
-    public Sniper() {
-        super(192, 50, 64);
+    public Sniper(int size) {
+        super(192, 50, 64, size);
     }
     
     /**
