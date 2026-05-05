@@ -10,6 +10,9 @@ public class Tower extends Actor
     // instance variables - replace the example below with your own
     protected int size;
 
+    protected int xPos;
+    protected int yPos;
+    
     protected int range;
     protected int damage;
     protected int cooldown;
@@ -22,13 +25,34 @@ public class Tower extends Actor
         this.damage = damage;
         this.cooldown = cooldown;
         this.size = size;
-        drawTower();
     }
 
-    public void drawTower() {
-        GreenfootImage img = new GreenfootImage("test.png");
+    public void setzePos(int xPos, int yPos) {
+        this.xPos = xPos;
+        this.yPos = yPos;
+    }
+    
+    public int gibX() {
+        return xPos;
+    }
+    
+    public int gibY() {
+        return yPos;
+    }    
+    
+    public int gibRange() {
+        return range;
+    }
+    
+    public void drawTower(String image) {
+        GreenfootImage img = new GreenfootImage(image);
         img.setColor(Color.BLACK);
         img.drawRect(0, 0, img.getWidth() - 1, img.getHeight() - 1);
         setImage(img);
+    }
+    
+    public void schiesse() {
+        this.damage = damage;
+        Projectile projectile = new Projectile(damage);
     }
 }
