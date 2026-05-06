@@ -1,4 +1,5 @@
 import greenfoot.*;
+import java.util.ArrayList;
 /**
  * Write a description of class Tower here.
  * 
@@ -55,4 +56,25 @@ public class Tower extends Actor
         this.damage = damage;
         Projectile projectile = new Projectile(damage);
     }
+    
+        public Enemy nächsterEnemy(ArrayList<Enemy> enemies, ArrayList<Tower> towers) {
+        Enemy nächsterGegner = null;
+        double minAbstand = Double.MAX_VALUE;
+        double abstand;
+        int dX;
+        int dY;
+        for (Tower t : towers) {
+            for (Enemy e : enemies) {
+                dX = e.gibX() - t.gibX();
+                dY = e.gibY() - t.gibY();
+                abstand = dX*dX + dY*dY;
+                if ( abstand < minAbstand) {
+                    minAbstand = abstand;
+                    nächsterGegner = e;
+                }
+            }
+        }  
+        return nächsterGegner;
+    }
+    
 }

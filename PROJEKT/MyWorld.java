@@ -56,25 +56,5 @@ public class MyWorld extends World
         addObject(enemy, x, y);
     }
     
-    public Enemy nächsterEnemy() {
-        Enemy nächsterGegner = null;
-        double minAbstand = Double.MAX_VALUE;
-        double abstand;
-        int dX;
-        int dY;
-        for (Tower t : towers) {
-            for (Enemy e : enemies) {
-                dX = e.gibX() - t.gibX();
-                dY = e.gibY() - t.gibY();
-                abstand = dX*dX + dY*dY;
-                if ( abstand < minAbstand) {
-                    minAbstand = abstand;
-                    nächsterGegner = e;
-                }
-            }
-        }  
-        return nächsterGegner;
-    }
-    
 }
 

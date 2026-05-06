@@ -8,6 +8,4 @@ comment2.params=
 comment2.target=void\ createMap()
 comment3.params=enemy\ x\ y
 comment3.target=void\ spawn(Enemy,\ int,\ int)
-comment4.params=
-comment4.target=Enemy\ n\u00E4chsterEnemy()
-numComments=5
+numComments=4
