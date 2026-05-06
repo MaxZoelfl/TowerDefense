@@ -28,16 +28,14 @@ public class Enemy extends Actor
     }
 
     public void moveTowards(ArrayList<Waypoint> waypoints) {
-
         if (waypointIndex >= waypoints.size()) {
             return;
         }
-
         Waypoint w = waypoints.get(waypointIndex);
 
         int dx = w.getX() - getX();
         int dy = w.getY() - getY();
-        
+
         distanzWaypoint = dx*dx + dy*dy;
         aktuellerWaypoint = w;
 
