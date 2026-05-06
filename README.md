@@ -1,6 +1,6 @@
 # Tower Defence Dev
 
-Das Spiel ** ist ein klassisches TowerDefence Spiel in welchem man man sich mit Hilfe von ** vor den in Wellen ankommenden ** beschützen muss. Dringen zu viele ** in deine Festung ein ist dein Spiel vorbei. Viel GLück!!!
+Das Spiel ** ist ein klassisches TowerDefence Spiel in welchem man man sich mit Hilfe von ** vor den in Wellen ankommenden ** beschützen muss. Dringen zu viele ** in deine Festung ein ist dein Spiel vorbei. Viel Glück!!!
 
 ## Inhaltsverzeichnis
 - Installation
@@ -22,7 +22,6 @@ nmp start
 - Feature 3
 - Feature 4
 - Feature 5
-- Feature 6
 
 ## Mitwirkend
 - Leon
