@@ -12,48 +12,45 @@ public class MyWorld extends World
     private int[][] map = {
             {0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,1,1,1,1,0,0},
-            {1,1,1,1,0,0,1,0,0,1,0,0},
+            {0,0,0,0,0,0,2,1,1,2,0,0},
+            {1,1,1,2,0,0,1,0,0,1,0,0},
             {0,0,0,1,0,0,1,0,0,1,0,0},
             {0,0,0,1,0,0,1,0,0,1,0,0},
-            {0,0,0,1,1,1,1,0,0,1,0,0},
+            {0,0,0,2,1,1,2,0,0,1,0,0},
             {0,0,0,0,0,0,0,0,0,1,0,0},
-            {0,0,0,0,0,0,0,0,0,1,0,0},
+            {0,0,0,0,0,0,0,0,0,2,0,0},
         };
-
+    
     ArrayList<Enemy> enemies = new ArrayList<>();
     ArrayList<Tower> towers = new ArrayList<>();
+    ArrayList<Waypoint> waypoints = new ArrayList<>();
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
     public MyWorld()
-    {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+    {
         super(16 * TILE_SIZE, 9 * TILE_SIZE, 1);
         createMap();
     }
 
-    private void createMap() {
+    public void createMap() {
         for (int y = 0; y < map.length; y++) {
             for (int x = 0; x < map[y].length; x++) {
                 int tileType = map[y][x];
                 Tile tile;
                 if (tileType == 0) {
                     tile = new Gras(TILE_SIZE);
+                } else if (tileType == 3){
+                    waypoints.add(new Waypoint());
+                    tile = new Weg(TILE_SIZE);
                 } else {
                     tile = new Weg(TILE_SIZE);
                 }
                 addObject(tile, x * TILE_SIZE + TILE_SIZE/2, y * TILE_SIZE + TILE_SIZE/2);
             }
         }
-    }
-
-    public void spawn(Enemy enemy, int x, int y) {
-        enemy.setzePos(x, y);
-        enemies.add(enemy);
-        addObject(enemy, x, y);
     }
     
 }

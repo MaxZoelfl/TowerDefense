@@ -13,10 +13,12 @@ public class Tower extends Actor
 
     protected int xPos;
     protected int yPos;
-    
+
     protected int range;
     protected int damage;
     protected int cooldown;
+
+    Enemy aktuellesTarget;
 
     /**
      * Constructor for objects of class Tower
@@ -28,53 +30,51 @@ public class Tower extends Actor
         this.size = size;
     }
 
-    public void setzePos(int xPos, int yPos) {
-        this.xPos = xPos;
-        this.yPos = yPos;
-    }
-    
-    public int gibX() {
-        return xPos;
-    }
-    
-    public int gibY() {
-        return yPos;
-    }    
-    
     public int gibRange() {
         return range;
     }
-    
+
     public void drawTower(String image) {
         GreenfootImage img = new GreenfootImage(image);
         img.setColor(Color.BLACK);
         img.drawRect(0, 0, img.getWidth() - 1, img.getHeight() - 1);
         setImage(img);
     }
-    
+
     public void schiesse() {
         this.damage = damage;
         Projectile projectile = new Projectile(damage);
     }
-    
-        public Enemy nächsterEnemy(ArrayList<Enemy> enemies, ArrayList<Tower> towers) {
-        Enemy nächsterGegner = null;
-        double minAbstand = Double.MAX_VALUE;
-        double abstand;
-        int dX;
-        int dY;
-        for (Tower t : towers) {
-            for (Enemy e : enemies) {
-                dX = e.gibX() - t.gibX();
-                dY = e.gibY() - t.gibY();
-                abstand = dX*dX + dY*dY;
-                if ( abstand < minAbstand) {
-                    minAbstand = abstand;
-                    nächsterGegner = e;
+
+    public Enemy gibTarget(ArrayList<Enemy> enemies, ArrayList<Waypoint> waypoints) {
+
+        Enemy target = null;
+        int bestWaypoint = -1;
+        int bestDist = Integer.MAX_VALUE;
+
+
+        for (Enemy e : enemies) {
+
+            int dx = getX() - e.getX();
+            int dy = getY() - e.getY();
+
+            if (dx*dx + dy*dy <= range*range) {
+
+                int waypointIndex = e.gibWaypointIndex();
+                int distanz = e.gibDistanzWaypoint();
+
+                if (waypointIndex > bestWaypoint ||
+                (waypointIndex == bestWaypoint && distanz < bestDist)) {
+
+                    target = e;
+                    bestWaypoint = waypointIndex;
+                    bestDist = distanz;
                 }
             }
-        }  
-        return nächsterGegner;
+            
+        }
+
+        return target;
     }
-    
+
 }
