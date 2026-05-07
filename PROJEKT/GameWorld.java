@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
-public class MyWorld extends World
+public class GameWorld extends World
 {   
     private static final int TILE_SIZE = 64;
     private int[][] map = {
@@ -27,10 +27,12 @@ public class MyWorld extends World
     protected int speed;
     
 
-    public MyWorld()
+    public GameWorld()
     {
         super(16 * TILE_SIZE, 9 * TILE_SIZE, 1);
         createMap();
+        createButtons();
+        
         paused = true;
         selectedButton = 0;
         speed = 1;
@@ -60,6 +62,15 @@ public class MyWorld extends World
                 addObject(tile, x * TILE_SIZE + TILE_SIZE/2, y * TILE_SIZE + TILE_SIZE/2);
             }
         }
+    }
+    
+    public void createButtons() {
+        addObject(new Button(1), 900, 150);
+    }
+    
+    public void setSelectedButton(int selectedButton) {
+        this.selectedButton = selectedButton;
+        System.out.println(selectedButton);
     }
     
     public void act() {
