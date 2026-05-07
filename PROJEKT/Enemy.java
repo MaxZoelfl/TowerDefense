@@ -13,7 +13,7 @@ public class Enemy extends Actor
     private int step;
 
     protected int distanceWaypoint;
-    Waypoint currentWaypoint;
+    private Waypoint current;
     protected int waypointIndex;
 
     private int health;
@@ -23,51 +23,42 @@ public class Enemy extends Actor
     /**
      * Constructor for objects of class Enemy
      */
-    public Enemy() {
-        waypointIndex = 0;
-        step = 2;
-        tick = 0;
+    public Enemy(Waypoint start) {
+        current = start;
     }
-    
-    public void moveTowards(ArrayList<Waypoint> waypoints) {
-        System.out.println("Los");
-        
-        int minDistance = Integer.MAX_VALUE;
-        int waypointIndex = 0;
-        
-        for (Waypoint w : waypoints) {
-            int dx = w.getX() - getX();
-            int dy = w.getY() - getY();    
-            int currentDistance = dx*dx + dy*dy;
-            
-            if (currentDistance < minDistance) {
-                distanceWaypoint = currentDistance;
-                currentWaypoint = w;
-                break;
-            } else {
-                waypointIndex++;
-            }
-        }
-        
-        Waypoint w = waypoints.get(waypointIndex);
 
+    public void move() {
+        if (current == null) {
+            return;
+        }
+
+        moveTowards(current);
+
+        if (reached(current)) {
+            current = current.getNext();
+        }
+    }
+
+    private boolean reached(Waypoint w) {
+        return getX() == w.getX() && getY() == w.getY();
+    }
+
+    public void moveTowards(Waypoint w) {
         int dx = w.getX() - getX();
         int dy = w.getY() - getY();
 
-        if (speed == tick) {
-            if (dx != 0) {
-                setLocation(getX() + (dx > 0 ? step : -step), getY());
-            } else if (dy != 0) {
-                setLocation(getX(), getY() + (dy > 0 ? step : -step));
-            }
-            if (Math.abs(dx) <= step && Math.abs(dy) <= step) {
-                waypointIndex++;
-            }
-            
-            tick = 0;
-        } else {
-            tick++;
+        double distance = Math.sqrt(dx*dx + dy*dy);
+
+        if (distance < speed) {
+            setLocation(w.getX(), w.getY());
+            return;
         }
+
+        double dirX = dx / distance;
+        double dirY = dy / distance;
+
+        setLocation(getX() + (int)(dirX * speed), getY() + (int)(dirY * speed)
+        );
     }
 
     public int gibDistanzWaypoint() {
