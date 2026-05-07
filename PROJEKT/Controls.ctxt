@@ -1,6 +1,7 @@
 #BlueJ class context
 comment0.target=Controls
 comment1.params=
-comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ tut,\ was\ auch\ immer\ Controls\ tun\ will.\ Diese\ Methode\ wird\ aufgerufen,\ \n\ sobald\ der\ 'Act'\ oder\ 'Run'\ Button\ in\ der\ Umgebung\ angeklickt\ werden.\ \n
-numComments=2
+comment1.target=Controls()
+comment2.params=
+comment2.target=void\ act()
+numComments=3
