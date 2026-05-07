@@ -31,10 +31,15 @@ public class MyWorld extends World
     {
         super(16 * TILE_SIZE, 9 * TILE_SIZE, 1);
         createMap();
-        
         paused = true;
         selectedButton = 0;
         speed = 1;
+        Enemy e = new Enemy();
+        addObject(e, 0, 224);
+        enemies.add(e);
+        System.out.println(enemies);
+        System.out.println(towers);
+        System.out.println(waypoints);
     }
 
     public void createMap() {
@@ -44,8 +49,10 @@ public class MyWorld extends World
                 Tile tile;
                 if (tileType == 0) {
                     tile = new Gras(TILE_SIZE);
-                } else if (tileType == 3){
-                    waypoints.add(new Waypoint());
+                } else if (tileType == 2){
+                    Waypoint w = new Waypoint(x * TILE_SIZE + TILE_SIZE/2, y * TILE_SIZE + TILE_SIZE/2);
+                    waypoints.add(w);
+                    
                     tile = new Weg(TILE_SIZE);
                 } else {
                     tile = new Weg(TILE_SIZE);
@@ -55,5 +62,10 @@ public class MyWorld extends World
         }
     }
     
+    public void act() {
+        for (Enemy e : enemies) {
+            e.moveTowards(waypoints);
+        }
+    }
 }
 

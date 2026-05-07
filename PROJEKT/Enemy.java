@@ -10,11 +10,11 @@ public class Enemy extends Actor
 {
     // instance variables - replace the example below with your own
     private int tick;
-    private int step = 2;
+    private int step;
 
-    protected int distanzWaypoint;
-    Waypoint aktuellerWaypoint;
-    protected int waypointIndex = 0;
+    protected int distanceWaypoint;
+    Waypoint currentWaypoint;
+    protected int waypointIndex;
 
     private int health;
     private int speed;
@@ -23,23 +23,38 @@ public class Enemy extends Actor
     /**
      * Constructor for objects of class Enemy
      */
-    public Enemy()
-    {
+    public Enemy() {
+        waypointIndex = 0;
+        step = 2;
+        tick = 0;
     }
-
+    
     public void moveTowards(ArrayList<Waypoint> waypoints) {
-        if (waypointIndex >= waypoints.size()) {
-            return;
+        System.out.println("Los");
+        
+        int minDistance = Integer.MAX_VALUE;
+        int waypointIndex = 0;
+        
+        for (Waypoint w : waypoints) {
+            int dx = w.getX() - getX();
+            int dy = w.getY() - getY();    
+            int currentDistance = dx*dx + dy*dy;
+            
+            if (currentDistance < minDistance) {
+                distanceWaypoint = currentDistance;
+                currentWaypoint = w;
+                break;
+            } else {
+                waypointIndex++;
+            }
         }
+        
         Waypoint w = waypoints.get(waypointIndex);
 
         int dx = w.getX() - getX();
         int dy = w.getY() - getY();
 
-        distanzWaypoint = dx*dx + dy*dy;
-        aktuellerWaypoint = w;
-
-        if (tick == speed) {
+        if (speed == tick) {
             if (dx != 0) {
                 setLocation(getX() + (dx > 0 ? step : -step), getY());
             } else if (dy != 0) {
@@ -56,7 +71,7 @@ public class Enemy extends Actor
     }
 
     public int gibDistanzWaypoint() {
-        return distanzWaypoint;
+        return distanceWaypoint;
     }
 
     public int gibWaypointIndex() {
