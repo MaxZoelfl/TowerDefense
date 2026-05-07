@@ -1,11 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
-/**
- * Write a description of class MyWorld here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class MyWorld extends World
 {   
     private static final int TILE_SIZE = 64;
@@ -24,15 +19,22 @@ public class MyWorld extends World
     ArrayList<Enemy> enemies = new ArrayList<>();
     ArrayList<Tower> towers = new ArrayList<>();
     ArrayList<Waypoint> waypoints = new ArrayList<>();
+    
+    //Game Dynamics
+    
+    protected boolean paused;
+    protected int selectedButton;
+    protected int speed;
+    
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
     public MyWorld()
     {
         super(16 * TILE_SIZE, 9 * TILE_SIZE, 1);
         createMap();
+        
+        paused = true;
+        selectedButton = 0;
+        speed = 1;
     }
 
     public void createMap() {
