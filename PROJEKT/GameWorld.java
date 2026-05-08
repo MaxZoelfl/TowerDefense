@@ -48,7 +48,7 @@ public class GameWorld extends World
         selectedButton = 0;
         speed = 1;
         
-        Enemy e = new Enemy(map, TILE_SIZE, 2);
+        Enemy e = new Enemy(map, TILE_SIZE, 4);
         addObject(e, startX, startY);
         enemies.add(e);
     }

@@ -43,9 +43,9 @@ public class Enemy extends Actor
         Math.abs(getY() - centerY) < speed)
         {
             setLocation(centerX, centerY);
-            
+
             direction = map[tileY][tileX];
-            
+
             switch (direction)
             {
                 case 1: // rechts
@@ -83,5 +83,6 @@ public class Enemy extends Actor
 
             setLocation(getX() + dx, getY() + dy);
         }
+        Greenfoot.delay(2);
     }
 }
