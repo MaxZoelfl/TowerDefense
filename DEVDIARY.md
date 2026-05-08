@@ -10,6 +10,8 @@ A provisional 'tower creation button' has been implemented. Pressing it changes 
 
 
 # FRIDAY, 08 MAY
+## Max
+Move() implemetation in Enemy class. Is following the path but nor perfect yet. Has to be improved.
 
 ## Leon
 Tile() ; Grass() ; Path() ; PathCorner() ; GameWorld()

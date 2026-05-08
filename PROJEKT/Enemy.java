@@ -10,11 +10,12 @@ public class Enemy extends Actor
 {
     // instance variables - replace the example below with your own
     private int health;
-    private int speed;
+    private int speed; // WICHTIG: muss ein Teiler von TILE_SIZE sein. (z.B. 2, 4, 8, 12, etc.)
     private int bounty;
 
     private int [][] map;
     private int tileSize;
+    private int direction = 1;
 
     /**
      * Constructor for objects of class Enemy
@@ -36,13 +37,15 @@ public class Enemy extends Actor
         int centerX = tileX * tileSize + tileSize / 2;
         int centerY = tileY * tileSize + tileSize / 2;
 
-        int direction = map[tileY][tileX];
+        //int direction = map[tileY][tileX];
 
         if (Math.abs(getX() - centerX) < speed &&
         Math.abs(getY() - centerY) < speed)
         {
             setLocation(centerX, centerY);
-
+            
+            direction = map[tileY][tileX];
+            
             switch (direction)
             {
                 case 1: // rechts
