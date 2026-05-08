@@ -9,7 +9,7 @@ A provisional 'tower creation button' has been implemented. Pressing it changes 
 ## Leopold
 
 
-#FRIDAY, 08 MAY
+# FRIDAY, 08 MAY
 
 ## Leon
 Tile() ; Grass() ; Path() ; PathCorner() ; GameWorld()
