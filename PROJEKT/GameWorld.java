@@ -58,11 +58,25 @@ public class GameWorld extends World
             for (int x = 0; x < map[y].length; x++) {
                 int tileType = map[y][x];
                 Tile tile;
-                if (tileType == 0) {
-                    tile = new Gras(TILE_SIZE);
-                } else {
-                    tile = new Weg(TILE_SIZE);
+                
+                switch (tileType) {
+                    case 0:
+                        tile = new Grass(TILE_SIZE);
+                        break;
+                    case 1:
+                    case 2:
+                        tile = new Path(TILE_SIZE, 0);
+                        break;
+                    case 3:
+                    case 4:
+                    case 6:
+                        tile = new Path(TILE_SIZE, 270);
+                        break;
+                    default:
+                        tile = new Grass(TILE_SIZE);
+                        break;
                 }
+                
                 addObject(tile, 
                     x * TILE_SIZE + TILE_SIZE/2, 
                     y * TILE_SIZE + TILE_SIZE/2

@@ -6,24 +6,12 @@ import greenfoot.*;
  * @version (a version number or a date)
  */
 public class Tile extends Actor {
+    
     protected int size;
+    protected boolean bebaubar;
     
-    private boolean bebaubar;
-    
-    /**
-     * Constructor for objects of class Tile
-     */
     public Tile(int size) {
         this.size = size;
-    }
-
-    public void drawTile(Color fillColor) {
-        GreenfootImage img = new GreenfootImage(size, size);
-        img.setColor(fillColor);
-        img.fill();
-        img.setColor(Color.BLACK);
-        img.drawRect(0, 0, size - 1, size - 1);
-        setImage(img);
     }
     
     public boolean istBebaubar() {
@@ -31,6 +19,17 @@ public class Tile extends Actor {
     }
     
     public void setzeBebaubar(boolean bebaubar) {
-        this.bebaubar= bebaubar;
+        this.bebaubar = bebaubar;
     }
 }
+
+/**
+ *     public void drawTile(Color fillColor) {
+        GreenfootImage img = new GreenfootImage(size, size);
+        img.setColor(fillColor);
+        img.fill();
+        img.setColor(Color.BLACK);
+        img.drawRect(0, 0, size - 1, size - 1);
+        setImage(img);
+    }
+ */
