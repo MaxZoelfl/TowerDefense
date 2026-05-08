@@ -10,6 +10,4 @@ comment3.params=image
 comment3.target=void\ drawTower(java.lang.String)
 comment4.params=
 comment4.target=void\ schiesse()
-comment5.params=enemies\ waypoints
-comment5.target=Enemy\ gibTarget(java.util.ArrayList,\ java.util.ArrayList)
-numComments=6
+numComments=5

@@ -46,35 +46,4 @@ public class Tower extends Actor
         Projectile projectile = new Projectile(damage);
     }
 
-    public Enemy gibTarget(ArrayList<Enemy> enemies, ArrayList<Waypoint> waypoints) {
-
-        Enemy target = null;
-        int bestWaypoint = -1;
-        int bestDist = Integer.MAX_VALUE;
-
-
-        for (Enemy e : enemies) {
-
-            int dx = getX() - e.getX();
-            int dy = getY() - e.getY();
-
-            if (dx*dx + dy*dy <= range*range) {
-
-                int waypointIndex = e.gibWaypointIndex();
-                int distanz = e.gibDistanzWaypoint();
-
-                if (waypointIndex > bestWaypoint ||
-                (waypointIndex == bestWaypoint && distanz < bestDist)) {
-
-                    target = e;
-                    bestWaypoint = waypointIndex;
-                    bestDist = distanz;
-                }
-            }
-            
-        }
-
-        return target;
-    }
-
 }

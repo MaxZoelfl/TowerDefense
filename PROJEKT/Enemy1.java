@@ -8,12 +8,10 @@ import greenfoot.*;
 public class Enemy1 extends Enemy 
 {
     // instance variables - replace the example below with your own
-    private Waypoint current;
-
     /**
      * Constructor for objects of class Enemy4
      */
-    public Enemy1(Waypoint start) {
-        super(start);
+    public Enemy1(int [][] map, int tileSize, int speed) {
+        super(map, tileSize, speed);
     }
 }

@@ -4,22 +4,32 @@ import java.util.ArrayList;
 public class GameWorld extends World
 {   
     private static final int TILE_SIZE = 64;
+    
+    /* Map Mechanic:
+     * 0 -> Gras
+     * 1 -> rechts
+     * 2 -> links
+     * 3 -> hoch
+     * 4 -> runter
+     * 5 -> Ziel
+     * 6 -> Start
+     */
     private int[][] map = {
             {0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,1,1,1,1,0,0},
-            {1,1,1,1,0,0,1,0,0,1,0,0},
-            {0,0,0,1,0,0,1,0,0,1,0,0},
-            {0,0,0,1,0,0,1,0,0,1,0,0},
-            {0,0,0,1,1,1,1,0,0,1,0,0},
-            {0,0,0,0,0,0,0,0,0,1,0,0},
-            {0,0,0,0,0,0,0,0,0,1,0,0},
+            {0,0,0,0,0,0,1,1,1,4,0,0},
+            {1,1,1,4,0,0,3,0,0,4,0,0},
+            {0,0,0,4,0,0,3,0,0,4,0,0},
+            {0,0,0,4,0,0,3,0,0,4,0,0},
+            {0,0,0,1,1,1,3,0,0,4,0,0},
+            {0,0,0,0,0,0,0,0,0,4,0,0},
+            {0,0,0,0,0,0,0,0,0,6,0,0},
         };
-    private Waypoint start;
+    private int startX = 0;
+    private int startY = 224;
 
     ArrayList<Enemy> enemies = new ArrayList<>();
     ArrayList<Tower> towers = new ArrayList<>();
-    ArrayList<Waypoint> waypoints = new ArrayList<>();
 
     //Game Dynamics
 
@@ -31,7 +41,6 @@ public class GameWorld extends World
     {
         super(16 * TILE_SIZE, 9 * TILE_SIZE, 1);
         createMap();
-        createWaypoints();
         
         createButtons();
 
@@ -39,9 +48,8 @@ public class GameWorld extends World
         selectedButton = 0;
         speed = 1;
         
-        
-        Enemy e = new Enemy(start);
-        addObject(e, start.getX(), start.getY());
+        Enemy e = new Enemy(map, TILE_SIZE, 2);
+        addObject(e, startX, startY);
         enemies.add(e);
     }
 
@@ -55,22 +63,12 @@ public class GameWorld extends World
                 } else {
                     tile = new Weg(TILE_SIZE);
                 }
-                addObject(tile, x * TILE_SIZE + TILE_SIZE/2, y * TILE_SIZE + TILE_SIZE/2);
+                addObject(tile, 
+                    x * TILE_SIZE + TILE_SIZE/2, 
+                    y * TILE_SIZE + TILE_SIZE/2
+                );
             }
         }
-    }
-
-    public void createWaypoints() {
-        Waypoint w1 = new Waypoint(0 * TILE_SIZE + TILE_SIZE/2, 3 * TILE_SIZE + TILE_SIZE/2);
-        Waypoint w2 = new Waypoint(3 * TILE_SIZE + TILE_SIZE/2, 3 * TILE_SIZE + TILE_SIZE/2);
-        Waypoint w3 = new Waypoint(3 * TILE_SIZE + TILE_SIZE/2, 6 * TILE_SIZE + TILE_SIZE/2);
-        Waypoint w4 = new Waypoint(3 * TILE_SIZE + TILE_SIZE/2, 4 * TILE_SIZE + TILE_SIZE/2);
-        
-        // Kette bauen
-        w1.setNext(w2);
-        w2.setNext(w3);
-        w3.setNext(w4);
-        start = w1;
     }
 
     public void createButtons() {
