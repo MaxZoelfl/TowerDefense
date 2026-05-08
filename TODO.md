@@ -1,38 +1,5 @@
-#To Do
-
-##All
-- Dev Diary
-- Handbuch
-- Story
-
-##Max
-
-##Leon
-
-
-##Leo
-- GUI Design
-- Mob Design
-
-#In Arbeit
-
-##Max
-- Enemies
-
-##Leon
-- Tiles
-- Buttons
-
-##Leo
-- Tile Design
-- Tower Design
-
-#Fertig
-
-##Max
-
-
-##Leon
-
-
-##Leo
+| Status       | Everyone                             | Max                       | Leon                        | Leopold                     
+|--------------|--------------------------------------|---------------------------|-----------------------------|-----------------------------
+| To Do        | - Dev Diary<br>- Handbuch<br>- Story |                           |                             | - GUI Design<br>- Mob Design
+| In Progress  |                                      | - Enemies                 | - Tiles<br>- Buttons        | - Tile Design<br>- Tower Design 
+| Done         |                                      |                           |                             |
