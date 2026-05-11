@@ -9,12 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 public class PathCorner extends Tile
 {
     public PathCorner(int size, int rotation) {
+        super(size, "PathCorner");
         
-        super(size);
-        
-        GreenfootImage img = new GreenfootImage("PathCorner.png");
-        img.scale(64, 64);
-        setImage(img);
         setRotation(rotation);
         
         setzeBebaubar(false);

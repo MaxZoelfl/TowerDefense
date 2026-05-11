@@ -10,8 +10,12 @@ public class Tile extends Actor {
     protected int size;
     protected boolean bebaubar;
     
-    public Tile(int size) {
+    public Tile(int size, String image) {
         this.size = size;
+        
+        GreenfootImage img = new GreenfootImage(image);
+        img.scale(64, 64);
+        setImage(img);
     }
     
     public boolean istBebaubar() {
@@ -23,7 +27,7 @@ public class Tile extends Actor {
     }
 }
 
-/**
+/*
  *     public void drawTile(Color fillColor) {
         GreenfootImage img = new GreenfootImage(size, size);
         img.setColor(fillColor);

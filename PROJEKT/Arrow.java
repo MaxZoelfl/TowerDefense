@@ -12,6 +12,10 @@ public class Arrow extends Tower
     
     public Arrow(int size) {
         super(128, 10, 32, size);
+        
+        GreenfootImage img = new GreenfootImage("BowTower.png");
+        img.scale(64, 64);
+        setImage(img);
     }
     
     /**

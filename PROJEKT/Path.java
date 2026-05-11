@@ -8,11 +8,8 @@ import greenfoot.*;
 public class Path extends Tile {
 
     public Path(int size, int rotation) {
-        super(size);
-
-        GreenfootImage img = new GreenfootImage("Path.png");
-        img.scale(64, 64);
-        setImage(img);
+        super(size, "Path.png");
+        
         setRotation(rotation);
         
         setzeBebaubar(false);

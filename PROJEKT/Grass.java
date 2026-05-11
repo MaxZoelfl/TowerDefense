@@ -8,11 +8,7 @@ import greenfoot.*;
 public class Grass extends Tile {
     
     public Grass(int size) {
-        super(size);
-        
-        GreenfootImage img = new GreenfootImage("Grass.png");
-        img.scale(64, 64);
-        setImage(img);
+        super(size, "Grass.png");
         
         setzeBebaubar(true);
     }

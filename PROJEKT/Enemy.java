@@ -1,5 +1,4 @@
 import greenfoot.*;
-import java.util.ArrayList;
 /**
  * Write a description of class Enemy here.
  * 
@@ -14,6 +13,7 @@ public class Enemy extends Actor
     private int bounty;
 
     private int [][] map;
+    private int pathIndex = 0;
     private int tileSize;
     private int direction = 1;
 
@@ -27,7 +27,12 @@ public class Enemy extends Actor
     }
 
     public void act() {
-        move();
+        
+    }
+
+    public int getPathIndex()
+    {
+        return pathIndex;
     }
 
     public void move() {
@@ -43,6 +48,8 @@ public class Enemy extends Actor
         Math.abs(getY() - centerY) < speed)
         {
             setLocation(centerX, centerY);
+
+            pathIndex++;
 
             direction = map[tileY][tileX];
 
@@ -83,6 +90,6 @@ public class Enemy extends Actor
 
             setLocation(getX() + dx, getY() + dy);
         }
-        Greenfoot.delay(2);
+        // Greenfoot.delay(2);
     }
 }

@@ -1,5 +1,5 @@
 import greenfoot.*;
-import java.util.ArrayList;
+import java.util.List;
 /**
  * Write a description of class Tower here.
  * 
@@ -18,7 +18,7 @@ public class Tower extends Actor
     protected int damage;
     protected int cooldown;
 
-    Enemy aktuellesTarget;
+    protected Enemy target;
 
     /**
      * Constructor for objects of class Tower
@@ -34,16 +34,33 @@ public class Tower extends Actor
         return range;
     }
 
-    public void drawTower(String image) {
-        GreenfootImage img = new GreenfootImage(image);
-        img.setColor(Color.BLACK);
-        img.drawRect(0, 0, img.getWidth() - 1, img.getHeight() - 1);
-        setImage(img);
+    public void attack()
+    {
+        List<Enemy> enemies = getObjectsInRange(range, Enemy.class);
+        target = null;
+        int maxProgress = -1;
+
+        for (Enemy e : enemies)
+        {
+            if (e.getPathIndex() > maxProgress)
+            {
+                maxProgress = e.getPathIndex();
+
+                target = e;
+            }
+        }
+
+        if (target != null)
+        {
+            shoot(target);
+        }
     }
 
-    public void schiesse() {
-        this.damage = damage;
-        Projectile projectile = new Projectile(damage);
+    public void shoot(Enemy target)
+    {
+        Bullet b = new Bullet(target);
+
+        getWorld().addObject(b, getX(), getY());
     }
 
 }

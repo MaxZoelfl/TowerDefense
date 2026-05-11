@@ -48,7 +48,12 @@ public class GameWorld extends World
         selectedButton = 0;
         speed = 1;
         
-        Enemy e = new Enemy(map, TILE_SIZE, 4);
+        // Beispiel BowTower bzw Arrow
+        Tower t = new Arrow(TILE_SIZE);
+        addObject(t, 5 * TILE_SIZE/2, 5 * TILE_SIZE/2);
+        
+        // Beispiel Enemy + Lauftest
+        Enemy e = new Enemy(map, TILE_SIZE, 1);
         addObject(e, startX, startY);
         enemies.add(e);
     }

@@ -1,7 +1,11 @@
 #BlueJ class context
-comment0.target=Projectile
+comment0.target=Bullet
 comment0.text=\n\ Write\ a\ description\ of\ class\ Projectile\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=damage
-comment1.target=Projectile(int)
+comment1.params=enemy
+comment1.target=Bullet(Enemy)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Projectile\n
-numComments=2
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ moveToTarget()
+numComments=4
