@@ -49,11 +49,14 @@ public class Tower extends Actor
         if (target != null) {
             shoot(target);
         }
+        
     }
 
     public void shoot(Enemy target) {
         Bullet b = new Bullet(target);
         getWorld().addObject(b, getX(), getY());
+        
+        Greenfoot.delay(128);
     }
 
 }

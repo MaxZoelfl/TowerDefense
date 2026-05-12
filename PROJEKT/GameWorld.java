@@ -18,12 +18,12 @@ public class GameWorld extends World
             {0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,1,1,1,4,0,0},
-            {6,1,1,4,0,0,3,0,0,4,0,0},
+            {1,1,1,4,0,0,3,0,0,4,0,0},
             {0,0,0,4,0,0,3,0,0,4,0,0},
             {0,0,0,4,0,0,3,0,0,4,0,0},
             {0,0,0,1,1,1,3,0,0,4,0,0},
             {0,0,0,0,0,0,0,0,0,4,0,0},
-            {0,0,0,0,0,0,0,0,0,5,0,0},
+            {0,0,0,0,0,0,0,0,0,6,0,0},
         };
     private int startX = 0;
     private int startY = 224;
@@ -51,6 +51,7 @@ public class GameWorld extends World
         // Beispiel BowTower bzw Arrow
         Tower t = new Arrow(TILE_SIZE);
         addObject(t, 5 * TILE_SIZE/2, 5 * TILE_SIZE/2);
+        towers.add(t);
         
         // Beispiel Enemy + Lauftest
         Enemy e = new Enemy(TILE_SIZE, 1);
@@ -75,7 +76,7 @@ public class GameWorld extends World
                     case 3:
                     case 4:
                     case 6:
-                        tile = new Path(TILE_SIZE +1, 180);
+                        tile = new Path(TILE_SIZE +1, 90);
                         break;
                     default:
                         tile = new Grass(TILE_SIZE);
@@ -102,6 +103,10 @@ public class GameWorld extends World
     public void act() {
         for (Enemy e : enemies) {
             e.move(map);
+        }
+        
+        for (Tower t : towers) {
+            t.attack();
         }
     }
 }
