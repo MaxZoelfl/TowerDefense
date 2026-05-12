@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class GameWorld extends World
 {   
-    private static final int TILE_SIZE = 64;
+    protected static final int TILE_SIZE = 64;
     
     /* Map Mechanic:
      * 0 -> Gras
@@ -70,12 +70,12 @@ public class GameWorld extends World
                         break;
                     case 1:
                     case 2:
-                        tile = new Path(TILE_SIZE, 0);
+                        tile = new Path(TILE_SIZE +1, 0);
                         break;
                     case 3:
                     case 4:
                     case 6:
-                        tile = new Path(TILE_SIZE, 180);
+                        tile = new Path(TILE_SIZE +1, 180);
                         break;
                     default:
                         tile = new Grass(TILE_SIZE);

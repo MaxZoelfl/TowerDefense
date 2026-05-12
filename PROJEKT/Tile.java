@@ -14,7 +14,7 @@ public class Tile extends Actor {
         this.size = size;
         
         GreenfootImage img = new GreenfootImage(image);
-        img.scale(64, 64);
+        img.scale(size, size);
         setImage(img);
     }
     
