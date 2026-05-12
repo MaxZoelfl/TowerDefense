@@ -53,23 +53,31 @@ public class Enemy extends Actor
 
             switch (direction)
             {
-                case 1: // rechts
+                case 1:  // rechts
+                case 9:  // von unten nach rechts
+                case 11: // von oben nach rechts
                     setLocation(getX() + speed, getY());
                     break;
 
-                case 2: // links
+                case 2:  // links
+                case 10: // von unten nach links
+                case 12: // von oben nach links
                     setLocation(getX() - speed, getY());
                     break;
 
-                case 3: // hoch
+                case 3:  // hoch
+                case 6:  // von links hoch
+                case 8:  // von rechts hoch
                     setLocation(getX(), getY() - speed);
                     break;
 
-                case 4: // runter
+                case 4:  // runter
+                case 5:  // von links runter
+                case 7:  // von rechts runter
                     setLocation(getX(), getY() + speed);
                     break;
 
-                case 5: // Ziel erreicht
+                case 13: // Ziel erreicht
                     getWorld().removeObject(this);
                     return;
             }
