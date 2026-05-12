@@ -34,32 +34,25 @@ public class Tower extends Actor
         return range;
     }
 
-    public void attack()
-    {
+    public void attack() {
         List<Enemy> enemies = getObjectsInRange(range, Enemy.class);
         target = null;
         int maxProgress = -1;
 
-        for (Enemy e : enemies)
-        {
-            if (e.getPathIndex() > maxProgress)
-            {
+        for (Enemy e : enemies) {
+            if (e.getPathIndex() > maxProgress) {
                 maxProgress = e.getPathIndex();
-
                 target = e;
             }
         }
 
-        if (target != null)
-        {
+        if (target != null) {
             shoot(target);
         }
     }
 
-    public void shoot(Enemy target)
-    {
+    public void shoot(Enemy target) {
         Bullet b = new Bullet(target);
-
         getWorld().addObject(b, getX(), getY());
     }
 

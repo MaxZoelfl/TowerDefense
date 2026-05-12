@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=Enemy
 comment0.text=\n\ Write\ a\ description\ of\ class\ Enemy\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=map\ tileSize\ speed
-comment1.target=Enemy(int[][],\ int,\ int)
+comment1.params=tileSize\ speed
+comment1.target=Enemy(int,\ int)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Enemy\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=int\ getPathIndex()
-comment4.params=
-comment4.target=void\ move()
+comment4.params=map
+comment4.target=void\ move(int[][])
 numComments=5

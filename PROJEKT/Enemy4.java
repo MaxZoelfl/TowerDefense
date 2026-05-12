@@ -12,7 +12,7 @@ public class Enemy4 extends Enemy
     /**
      * Constructor for objects of class Enemy4
      */
-    public Enemy4(int [][] map, int tileSize, int speed) {
-        super(map, tileSize, speed);
+    public Enemy4(int tileSize, int speed) {
+        super(tileSize, speed);
     }
 }

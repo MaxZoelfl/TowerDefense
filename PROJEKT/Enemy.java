@@ -12,7 +12,6 @@ public class Enemy extends Actor
     private int speed; // WICHTIG: muss ein Teiler von TILE_SIZE sein. (z.B. 2, 4, 8, 12, etc.)
     private int bounty;
 
-    private int [][] map;
     private int pathIndex = 0;
     private int tileSize;
     private int direction = 1;
@@ -20,8 +19,7 @@ public class Enemy extends Actor
     /**
      * Constructor for objects of class Enemy
      */
-    public Enemy(int [][] map, int tileSize, int speed) {
-        this.map = map;
+    public Enemy(int tileSize, int speed) {
         this.tileSize = tileSize;
         this.speed = speed;
     }
@@ -35,7 +33,7 @@ public class Enemy extends Actor
         return pathIndex;
     }
 
-    public void move() {
+    public void move(int [][] map) {
         int tileX = getX() / tileSize;
         int tileY = getY() / tileSize;
 
