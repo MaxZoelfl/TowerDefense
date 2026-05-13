@@ -87,7 +87,7 @@ public class Enemy extends Actor
                 break;
 
                 // ZIEL ERREICHT
-            case 13:
+            case 14:
                 getWorld().removeObject(this);
                 return;
         }

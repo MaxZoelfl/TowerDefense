@@ -61,7 +61,7 @@ public class GameWorld extends World
         towers.add(t);
         
         // Beispiel Enemy + Lauftest
-        Enemy e = new Enemy(TILE_SIZE, 1);
+        Enemy e = new Rat(TILE_SIZE, 1);
         addObject(e, startX, startY);
         enemies.add(e);
     }
@@ -122,7 +122,7 @@ public class GameWorld extends World
     }
 
     public void createButtons() {
-        addObject(new Button(1), 900, 150);
+        addObject(new PlayButton(1), 900, 150);
     }
 
     public void setSelectedButton(int selectedButton) {
