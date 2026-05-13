@@ -10,4 +10,6 @@ comment3.params=
 comment3.target=int\ getPathIndex()
 comment4.params=map
 comment4.target=void\ move(int[][])
-numComments=5
+comment5.params=
+comment5.target=void\ setRotation()
+numComments=6

@@ -63,6 +63,7 @@ public class Enemy extends Actor
             case 9:
             case 11:
                 dx = speed;
+                setRotation(0);
                 break;
 
                 // LINKS
@@ -70,6 +71,7 @@ public class Enemy extends Actor
             case 10:
             case 12:
                 dx = -speed;
+                setRotation(180);
                 break;
 
                 // HOCH
@@ -77,6 +79,7 @@ public class Enemy extends Actor
             case 6:
             case 8:
                 dy = -speed;
+                setRotation(270);
                 break;
 
                 // RUNTER
@@ -84,6 +87,7 @@ public class Enemy extends Actor
             case 5:
             case 7:
                 dy = speed;
+                setRotation(90);
                 break;
 
                 // ZIEL ERREICHT
@@ -93,5 +97,9 @@ public class Enemy extends Actor
         }
 
         setLocation(getX() + dx, getY() + dy);
+    }
+    
+    public void setRotation() {
+        
     }
 }
