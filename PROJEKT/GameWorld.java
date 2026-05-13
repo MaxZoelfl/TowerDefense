@@ -135,9 +135,11 @@ public class GameWorld extends World
             e.move(map);
         }
         
+        /*
         for (Tower t : towers) {
             t.attack();
-        }
+        }   
+        */
     }
 }
 

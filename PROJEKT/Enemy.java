@@ -25,7 +25,7 @@ public class Enemy extends Actor
     }
 
     public void act() {
-        
+
     }
 
     public int getPathIndex()
@@ -33,69 +33,65 @@ public class Enemy extends Actor
         return pathIndex;
     }
 
-    public void move(int [][] map) {
+    public void move(int[][] map)
+    {
         int tileX = getX() / tileSize;
         int tileY = getY() / tileSize;
 
         int centerX = tileX * tileSize + tileSize / 2;
         int centerY = tileY * tileSize + tileSize / 2;
 
-        //int direction = map[tileY][tileX];
-
+        // Prüfen ob Gegner nahe genug am Mittelpunkt des aktuellen Tiles ist
         if (Math.abs(getX() - centerX) < speed &&
         Math.abs(getY() - centerY) < speed)
         {
+            // Exakt auf Mittelpunkt setzen
             setLocation(centerX, centerY);
 
-            pathIndex++;
-
+            // Richtung des aktuellen Tiles lesen
             direction = map[tileY][tileX];
-
-            switch (direction)
-            {
-                case 1:  // rechts
-                case 9:  // von unten nach rechts
-                case 11: // von oben nach rechts
-                    setLocation(getX() + speed, getY());
-                    break;
-
-                case 2:  // links
-                case 10: // von unten nach links
-                case 12: // von oben nach links
-                    setLocation(getX() - speed, getY());
-                    break;
-
-                case 3:  // hoch
-                case 6:  // von links hoch
-                case 8:  // von rechts hoch
-                    setLocation(getX(), getY() - speed);
-                    break;
-
-                case 4:  // runter
-                case 5:  // von links runter
-                case 7:  // von rechts runter
-                    setLocation(getX(), getY() + speed);
-                    break;
-
-                case 13: // Ziel erreicht
-                    getWorld().removeObject(this);
-                    return;
-            }
         }
-        else
+
+        // Bewegung anhand der aktuellen Richtung
+        int dx = 0;
+        int dy = 0;
+
+        switch (direction)
         {
-            // weiter in aktueller Richtung bewegen (kein abruptes Umsteuern)
-            // optional: verhindert Zittern
-            int dx = 0;
-            int dy = 0;
+                // RECHTS
+            case 1:
+            case 9:
+            case 11:
+                dx = speed;
+                break;
 
-            if (direction == 1) dx = speed;
-            else if (direction == 2) dx = -speed;
-            else if (direction == 3) dy = -speed;
-            else if (direction == 4) dy = speed;
+                // LINKS
+            case 2:
+            case 10:
+            case 12:
+                dx = -speed;
+                break;
 
-            setLocation(getX() + dx, getY() + dy);
+                // HOCH
+            case 3:
+            case 6:
+            case 8:
+                dy = -speed;
+                break;
+
+                // RUNTER
+            case 4:
+            case 5:
+            case 7:
+                dy = speed;
+                break;
+
+                // ZIEL ERREICHT
+            case 13:
+                getWorld().removeObject(this);
+                return;
         }
-        // Greenfoot.delay(2);
+
+        setLocation(getX() + dx, getY() + dy);
     }
 }
