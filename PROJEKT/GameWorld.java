@@ -131,15 +131,17 @@ public class GameWorld extends World
     }
 
     public void act() {
+        Clock.tick++;
+        
         for (Enemy e : enemies) {
             e.move(map);
         }
         
-        /*
+        
         for (Tower t : towers) {
-            t.attack();
+            if (Clock.tick % t.cooldown == 0) t.attack();
         }   
-        */
+        
     }
 }
 
