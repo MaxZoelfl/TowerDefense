@@ -79,33 +79,33 @@ public class GameWorld extends World
                         
                     case 1:  //rechts
                     case 2:  //links
-                        tile = new Path(TILE_SIZE +1, 0);
+                        tile = new Path(TILE_SIZE, 0);
                         break;
                         
                     case 3:  //hoch
                     case 4:  //runter
                     case 13: //Ziel
-                        tile = new Path(TILE_SIZE +1, 90);
+                        tile = new Path(TILE_SIZE, 90);
                         break;
                         
                     case 5:  //links>runter
                     case 10: //unten>links
-                        tile = new PathCorner(TILE_SIZE +1, 0);
+                        tile = new PathCorner(TILE_SIZE, 0);
                         break;
                         
                     case 6:  //links>hoch
                     case 12: //oben>links
-                        tile = new PathCorner(TILE_SIZE +1, 90);
+                        tile = new PathCorner(TILE_SIZE, 90);
                         break;
                         
                     case 7:  //rechts>runter
                     case 9:  //unten>rechts
-                        tile = new PathCorner(TILE_SIZE +1, 270);
+                        tile = new PathCorner(TILE_SIZE, 270);
                         break;
                         
                     case 8:  //rechts>hoch
                     case 11: //oben>rechts
-                        tile = new PathCorner(TILE_SIZE +1, 180);
+                        tile = new PathCorner(TILE_SIZE, 180);
                         break;
                         
                     default:
