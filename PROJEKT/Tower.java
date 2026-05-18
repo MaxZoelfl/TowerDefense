@@ -53,8 +53,8 @@ public class Tower extends Actor
     }
 
     public void shoot(Enemy target) {
-        Bullet b = new Bullet(target);
-        getWorld().addObject(b, getX(), getY());
+        Projectile p = new Projectile(target);
+        getWorld().addObject(p, getX(), getY());
         
         Greenfoot.delay(128);
     }

@@ -8,22 +8,32 @@ import greenfoot.*;
 public class Tile extends Actor {
     
     protected int size;
-    protected boolean bebaubar;
+    protected boolean buildable;
+    protected boolean occupied;
     
     public Tile(int size, String image) {
         this.size = size;
+        this.occupied = false;
         
         GreenfootImage img = new GreenfootImage(image);
         img.scale(size, size);
         setImage(img);
     }
     
-    public boolean istBebaubar() {
-        return bebaubar;
+    public boolean isBuildable() {
+        return buildable;
     }
     
-    public void setzeBebaubar(boolean bebaubar) {
-        this.bebaubar = bebaubar;
+    public void setBuildable(boolean buildable) {
+        this.buildable = buildable;
+    }
+    
+    public boolean isOccupied() {
+        return occupied;
+    }
+    
+    public void setOccupied(boolean occupied) {
+        this.occupied = occupied;
     }
 }
 

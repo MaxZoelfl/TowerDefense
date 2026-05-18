@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class GameWorld extends World
 {   
-    protected static final int TILE_SIZE = 64;
     
     /* Map Mechanic:
      *  0 -> Gras
@@ -40,28 +39,29 @@ public class GameWorld extends World
 
     //Game Dynamics
 
+    public static int clock = 0;
     protected boolean paused;
     protected int selectedButton;
     protected int speed;
 
     public GameWorld()
     {
-        super(16 * TILE_SIZE, 9 * TILE_SIZE, 1);
+        super(16 * GameConstants.TILE_SIZE, 9 * GameConstants.TILE_SIZE, 1);
         createMap();
         
         createButtons();
 
-        paused = true;
-        selectedButton = 0;
+        paused = false;  //PROVISIONAL
+        selectedButton = GameConstants.NONE;
         speed = 1;
         
         // Beispiel BowTower bzw Arrow
-        Tower t = new Arrow(TILE_SIZE);
-        addObject(t, 5 * TILE_SIZE/2, 5 * TILE_SIZE/2);
+        Tower t = new Bow(GameConstants.TILE_SIZE);
+        addObject(t, 5 * GameConstants.TILE_SIZE/2, 5 * GameConstants.TILE_SIZE/2);
         towers.add(t);
         
         // Beispiel Enemy + Lauftest
-        Enemy e = new Rat(TILE_SIZE, 1);
+        Enemy e = new Rat(GameConstants.TILE_SIZE, 1);
         addObject(e, startX, startY);
         enemies.add(e);
     }
@@ -74,64 +74,69 @@ public class GameWorld extends World
                 
                 switch (tileType) {
                     case 0: //Grass
-                        tile = new Grass(TILE_SIZE);
+                        tile = new Grass(GameConstants.TILE_SIZE);
                         break;
                         
                     case 1:  //rechts
                     case 2:  //links
-                        tile = new Path(TILE_SIZE, 0);
+                        tile = new Path(GameConstants.TILE_SIZE, 0);
                         break;
                         
                     case 3:  //hoch
                     case 4:  //runter
                     case 13: //Ziel
-                        tile = new Path(TILE_SIZE, 90);
+                        tile = new Path(GameConstants.TILE_SIZE, 90);
                         break;
                         
                     case 5:  //links>runter
                     case 10: //unten>links
-                        tile = new PathCorner(TILE_SIZE, 0);
+                        tile = new PathCorner(GameConstants.TILE_SIZE, 0);
                         break;
                         
                     case 6:  //links>hoch
                     case 12: //oben>links
-                        tile = new PathCorner(TILE_SIZE, 90);
+                        tile = new PathCorner(GameConstants.TILE_SIZE, 90);
                         break;
                         
                     case 7:  //rechts>runter
                     case 9:  //unten>rechts
-                        tile = new PathCorner(TILE_SIZE, 270);
+                        tile = new PathCorner(GameConstants.TILE_SIZE, 270);
                         break;
                         
                     case 8:  //rechts>hoch
                     case 11: //oben>rechts
-                        tile = new PathCorner(TILE_SIZE, 180);
+                        tile = new PathCorner(GameConstants.TILE_SIZE, 180);
                         break;
                         
                     default:
-                        tile = new Grass(TILE_SIZE);
+                        tile = new Grass(GameConstants.TILE_SIZE);
                         break;
                 }
                 
                 addObject(tile, 
-                    x * TILE_SIZE + TILE_SIZE/2, 
-                    y * TILE_SIZE + TILE_SIZE/2
+                    x * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2, 
+                    y * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2
                 );
             }
         }
     }
 
     public void createButtons() {
-        addObject(new PlayButton(1), 900, 150);
+        addObject(new Button(GameConstants.PLAY), 900, 500);
+        addObject(new Button(GameConstants.BOW), 900, 150);
+    }
+    
+    public int getSelectedButton() {
+        return selectedButton;
     }
 
-    public void setSelectedButton(int selectedButton) {
-        this.selectedButton = selectedButton;
-        System.out.println(selectedButton);
+    public void setSelectedButton(int buttonType) {
+        selectedButton = buttonType;
     }
 
     public void act() {
-        Clock.tick++;
+        
+        clock++;
         
         for (Enemy e : enemies) {
             e.move(map);
@@ -139,7 +144,7 @@ public class GameWorld extends World
         
         
         for (Tower t : towers) {
-            if (Clock.tick % t.cooldown == 0) t.attack();
+            if (clock % t.cooldown == 0) t.attack();
         }   
         
     }

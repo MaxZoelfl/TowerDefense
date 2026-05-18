@@ -7,14 +7,14 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Arrow extends Tower
+public class Bow extends Tower
 {
     
-    public Arrow(int size) {
+    public Bow(int size) {
         super(128, 10, 32, size);
         
         GreenfootImage img = new GreenfootImage("BowTower.png");
-        img.scale(64, 64);
+        img.scale(GameConstants.TILE_SIZE, GameConstants.TILE_SIZE);
         setImage(img);
     }
     

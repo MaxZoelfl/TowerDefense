@@ -13,7 +13,7 @@ public class Path extends Tile {
     public Path(int size, int rotation) {
         super(size, "Path_" + rotation + ".png");
         
-        setzeBebaubar(false);
+        setBuildable(false);
     }
 
 }

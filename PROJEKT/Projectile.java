@@ -5,7 +5,7 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bullet extends Actor
+public class Projectile extends Actor
 {
     // instance variables - replace the example below with your own
     private Enemy target;
@@ -13,7 +13,7 @@ public class Bullet extends Actor
     /**
      * Constructor for objects of class Projectile
      */
-    public Bullet(Enemy enemy) {
+    public Projectile(Enemy enemy) {
         target = enemy;
     }
 

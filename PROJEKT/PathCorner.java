@@ -11,6 +11,6 @@ public class PathCorner extends Tile
     public PathCorner(int size, int rotation) {
         super(size, "PathCorner_" + rotation + ".png");
 
-        setzeBebaubar(false);
+        setBuildable(false);
     }
 }
