@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=Tower
 comment0.text=\n\ Write\ a\ description\ of\ class\ Tower\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=size\ image\ range\ damage\ cooldown
-comment1.target=Tower(int,\ java.lang.String,\ int,\ int,\ int)
+comment1.params=size\ towerType
+comment1.target=Tower(int,\ TowerType)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Tower\n
 comment2.params=
-comment2.target=int\ gibRange()
+comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ attack()
 comment4.params=target

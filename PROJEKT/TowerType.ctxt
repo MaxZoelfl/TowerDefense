@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TowerType
+comment1.params=cost\ damage\ range\ cooldown\ projectileType\ image
+comment1.target=TowerType(int,\ int,\ int,\ int,\ ProjectileType,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getImage()
+numComments=3

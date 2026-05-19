@@ -39,7 +39,6 @@ public class GameWorld extends World
 
     //Game Dynamics
 
-    public static int clock = 0;
     protected boolean paused;
     protected ButtonType selectedButton;
     protected int speed;
@@ -57,7 +56,7 @@ public class GameWorld extends World
         speed = 1;
         
         // Beispiel BowTower bzw Arrow
-        Tower t = new Magic(GameConstants.TILE_SIZE);
+        Tower t = new Tower(GameConstants.TILE_SIZE, TowerType.MAGIC);
         addObject(t, 5 * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2, 5 * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2);
         towers.add(t);
         
@@ -140,18 +139,9 @@ public class GameWorld extends World
     }
 
     public void act() {
-        
-        clock++;
-        
         for (Enemy e : getObjects(Enemy.class)) {
             e.move(map);
         }
-        
-        
-        for (Tower t : towers) {
-                if (clock % t.cooldown == 0) t.attack();
-        }   
-        
     }
 }
 

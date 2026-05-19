@@ -8,14 +8,20 @@ import greenfoot.*;
 public class Projectile extends Actor
 {
     // instance variables - replace the example below with your own
+    protected ProjectileType projectileType;
     private Enemy target;
+    private int damage;
     private int speed = 5;
 
     /**
      * Constructor for objects of class Projectile
      */
-    public Projectile(Enemy enemy) {
-        target = enemy;
+    public Projectile(ProjectileType projectileType, Enemy target, int Damage) {
+        this.projectileType = projectileType;
+        setImage(projectileType.getImage());
+        
+        this.target = target;
+        this.damage = damage; 
     }
 
     public void act() {

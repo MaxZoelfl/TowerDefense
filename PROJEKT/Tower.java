@@ -9,37 +9,34 @@ import java.util.List;
 public class Tower extends Actor
 {
     // instance variables - replace the example below with your own
-    protected int size;
-
-    protected int xPos;
-    protected int yPos;
-
-    protected int range;
-    protected int damage;
-    protected int cooldown;
+    protected TowerType towerType;
+    private int cooldownTimer;
 
     protected Enemy target;
 
     /**
      * Constructor for objects of class Tower
      */
-    public Tower(int size, String image, int range, int damage, int cooldown){
-        this.size = size;
-        this.range = range;
-        this.damage = damage;
-        this.cooldown = cooldown;
-        
-        GreenfootImage img = new GreenfootImage(image);
+    public Tower(int size, TowerType towerType) {
+        this.towerType = towerType;
+
+        GreenfootImage img = new GreenfootImage(towerType.getImage());
         img.scale(size, size);
         setImage(img);
     }
 
-    public int gibRange() {
-        return range;
+    public void act() {
+        cooldownTimer--;
+
+        if (cooldownTimer <= 0) {
+            attack();
+        }
     }
 
     public void attack() {
-        List<Enemy> enemies = getObjectsInRange(range, Enemy.class);
+
+        List<Enemy> enemies = getObjectsInRange(towerType.range, Enemy.class);
+
         target = null;
         int maxProgress = -1;
 
@@ -52,15 +49,12 @@ public class Tower extends Actor
 
         if (target != null) {
             shoot(target);
+            cooldownTimer = towerType.cooldown;
         }
-        
     }
 
     public void shoot(Enemy target) {
-        Projectile p = new Projectile(target);
+        Projectile p = new Projectile(towerType.projectileType, target, towerType.damage);
         getWorld().addObject(p, getX(), getY());
-        
-        Greenfoot.delay(128);
     }
-
 }
