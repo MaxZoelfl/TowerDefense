@@ -1,5 +1,18 @@
-| Status       | Everyone                             | Max                       | Leon                        | Leopold                     
-|--------------|--------------------------------------|---------------------------|-----------------------------|-----------------------------
-| To Do        | - Dev Diary<br>- Handbuch<br>- Story |                           | - HP and money system       | - GUI Design<br>- Mob Design
-| In Progress  |                                      | - Enemies                 | - Buttons                   | - Tile Design<br>- Tower Design 
-| Done         |                                      |                           | - Tiles                     |
+# TO DO
+
+- HP system (Leon)
+- Money system (Leon)
+- Play/Pause button (Leon)
+
+# IN PROGRESS
+
+- 'Place tower' button (Leon)
+- Enemy mechanics (Max)
+- Tower mechanics (Max)
+- Enemy Design (Leopold)
+- Button Design (Leopold)
+
+# DONE
+
+- Grass and Path Tiles (Leopold)
+- Tile implementation (Leon)
