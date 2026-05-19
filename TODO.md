@@ -9,10 +9,11 @@
 - 'Place tower' button (Leon)
 - Enemy mechanics (Max)
 - Tower mechanics (Max)
+- Projectile mechanic (Max)
 - Enemy Design (Leopold)
 - Button Design (Leopold)
 
 # DONE
 
 - Grass and Path Tiles (Leopold)
-- Tile implementation (Leon)
+- Tile implementation (basis: Max, besser: Leon) 
