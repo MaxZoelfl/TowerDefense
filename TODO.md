@@ -16,4 +16,4 @@
 # DONE
 
 - Grass and Path Tiles (Leopold)
-- Tile implementation (basis Logik: Max, besser: Leon) 
+- Tile & Map implementation (basis Logik: Max, besser: Leon) 
