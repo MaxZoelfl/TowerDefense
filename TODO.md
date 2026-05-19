@@ -21,6 +21,7 @@
 
 - Grass and Path Tiles (Leopold)
 - Tile & Map implementation (basis Logik: Max, besser: Leon)
+- Umwandlung von Unterklassen in enum-typen (Max)
 - Enemy mechanics (Max):
   - Pfad Folgen + drehen
 - Tower + Projectile mechanics (Max):
