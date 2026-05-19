@@ -23,11 +23,15 @@ public class Tower extends Actor
     /**
      * Constructor for objects of class Tower
      */
-    public Tower(int range, int damage, int cooldown, int size){
+    public Tower(int size, String image, int range, int damage, int cooldown){
+        this.size = size;
         this.range = range;
         this.damage = damage;
         this.cooldown = cooldown;
-        this.size = size;
+        
+        GreenfootImage img = new GreenfootImage(image);
+        img.scale(size, size);
+        setImage(img);
     }
 
     public int gibRange() {

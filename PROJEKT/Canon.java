@@ -11,7 +11,7 @@ public class Canon extends Tower
 {
 
     public Canon(int size) {
-        super(96, 30, 48, size);
+        super(size, "Canon.png", 96, 30, 48);
     }
     
     /**

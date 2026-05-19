@@ -15,7 +15,7 @@ public class Button extends Actor
                 break;
             
             case GameConstants.BOW:
-                setImage("BowTower.png");
+                setImage("Bow.png");
                 break;
         }
     }

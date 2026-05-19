@@ -11,9 +11,9 @@ public class Bow extends Tower
 {
     
     public Bow(int size) {
-        super(128, 10, 32, size);
+        super(size, "Bow.png",128, 10, 32);
         
-        GreenfootImage img = new GreenfootImage("BowTower.png");
+        GreenfootImage img = new GreenfootImage("Bow.png");
         img.scale(GameConstants.TILE_SIZE, GameConstants.TILE_SIZE);
         setImage(img);
     }

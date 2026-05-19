@@ -19,9 +19,13 @@ public class Enemy extends Actor
     /**
      * Constructor for objects of class Enemy
      */
-    public Enemy(int tileSize, int speed) {
-        this.tileSize = tileSize;
+    public Enemy(int size, String image, int speed) {
+        this.tileSize = size;
         this.speed = speed;
+        
+        GreenfootImage img = new GreenfootImage(image);
+        img.scale(size, size);
+        setImage(img);
     }
 
     public void act() {

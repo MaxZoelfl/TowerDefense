@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Rat extends Enemy
 {
     public Rat(int tileSize, int speed) {
-        super(tileSize, speed);
+        super(tileSize, "Rat.png", speed);
     }
     
     /**

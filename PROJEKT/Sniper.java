@@ -13,7 +13,7 @@ public class Sniper extends Tower
 {
     
     public Sniper(int size) {
-        super(192, 50, 64, size);
+        super(size, "Sniper.png", 192, 50, 64);
     }
     
     /**

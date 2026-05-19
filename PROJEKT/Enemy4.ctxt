@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Enemy4
-comment0.text=\n\ Write\ a\ description\ of\ class\ Enemy4\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=tileSize\ speed
-comment1.target=Enemy4(int,\ int)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Enemy4\n
-numComments=2

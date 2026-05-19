@@ -57,7 +57,7 @@ public class GameWorld extends World
         
         // Beispiel BowTower bzw Arrow
         Tower t = new Bow(GameConstants.TILE_SIZE);
-        addObject(t, 5 * GameConstants.TILE_SIZE/2, 5 * GameConstants.TILE_SIZE/2);
+        addObject(t, 5 * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2, 5 * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2);
         towers.add(t);
         
         // Beispiel Enemy + Lauftest
