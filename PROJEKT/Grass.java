@@ -19,11 +19,11 @@ public class Grass extends Tile {
             
             GameWorld world = (GameWorld) getWorld();
             
-            if (world.getSelectedButton() == GameConstants.BOW && !isOccupied()) {
-                
+            if (world.getSelectedButton() == ButtonType.BOW && !isOccupied()) {
                 world.addObject(new Bow(GameConstants.TILE_SIZE), getX(), getY());
                 setOccupied(true);
-                world.setSelectedButton(GameConstants.NONE);
+                //world.setSelectedButton(GameConstants.NONE);
+                world.setSelectedButton(ButtonType.NONE);
             }
         }
     }

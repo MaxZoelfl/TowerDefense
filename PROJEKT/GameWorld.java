@@ -41,7 +41,7 @@ public class GameWorld extends World
 
     public static int clock = 0;
     protected boolean paused;
-    protected int selectedButton;
+    protected ButtonType selectedButton;
     protected int speed;
 
     public GameWorld()
@@ -52,7 +52,8 @@ public class GameWorld extends World
         createButtons();
 
         paused = false;  //PROVISIONAL
-        selectedButton = GameConstants.NONE;
+        //selectedButton = GameConstants.NONE;
+        selectedButton = ButtonType.NONE;
         speed = 1;
         
         // Beispiel BowTower bzw Arrow
@@ -122,15 +123,19 @@ public class GameWorld extends World
     }
 
     public void createButtons() {
+        /*
         addObject(new Button(GameConstants.PLAY), 900, 500);
         addObject(new Button(GameConstants.BOW), 900, 150);
+        */
+        addObject(new Button(ButtonType.PLAY), 900, 500);
+        addObject(new Button(ButtonType.BOW), 900, 150);
     }
     
-    public int getSelectedButton() {
+    public ButtonType getSelectedButton() {
         return selectedButton;
     }
 
-    public void setSelectedButton(int buttonType) {
+    public void setSelectedButton(ButtonType buttonType) {
         selectedButton = buttonType;
     }
 

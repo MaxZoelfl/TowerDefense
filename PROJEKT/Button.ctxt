@@ -1,7 +1,8 @@
 #BlueJ class context
 comment0.target=Button
 comment1.params=buttonType
-comment1.target=Button(int)
+comment1.target=Button(ButtonType)
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\n\ \ \ \ public\ Button\ (int\ buttonType)\ {\n\ \ \ \ \ \ \ \ this.buttonType\ \=\ buttonType;\n\ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ switch(buttonType)\ {\n\ \ \ \ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ \ \ \ \ case\ GameConstants.PLAY\:\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setImage("PlayButton.png");\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\n\ \ \ \ \ \ \ \ \ \ \ \ \n\ \ \ \ \ \ \ \ \ \ \ \ case\ GameConstants.BOW\:\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setImage("Bow.png");\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ break;\n\ \ \ \ \ \ \ \ }\n\ \ \ \ }\n
 numComments=3

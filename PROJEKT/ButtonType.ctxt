@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ButtonType
+comment1.params=image
+comment1.target=ButtonType(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getImage()
+numComments=3

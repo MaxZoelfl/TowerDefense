@@ -3,8 +3,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 public class Button extends Actor
 {
     
-    protected int buttonType;
+    protected ButtonType buttonType;
 
+    public Button(ButtonType buttonType) {
+        this.buttonType = buttonType;
+        setImage(buttonType.getImage());
+    }
+    
+    /*
     public Button (int buttonType) {
         this.buttonType = buttonType;
         
@@ -19,6 +25,7 @@ public class Button extends Actor
                 break;
         }
     }
+    */
     
     public void act () {
         if (Greenfoot.mouseClicked(this)) {
