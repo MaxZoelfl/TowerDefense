@@ -37,8 +37,9 @@ public class Enemy extends Actor
         return pathIndex;
     }
 
-    public void move(int[][] map)
-    {
+    public void move(int[][] map) {
+        if (getWorld() == null) return;
+        
         int tileX = getX() / tileSize;
         int tileY = getY() / tileSize;
 

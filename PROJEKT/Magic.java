@@ -7,11 +7,11 @@ import greenfoot.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Wizard extends Tower
+public class Magic extends Tower
 {
     
-    public Wizard(int size) {
-        super(size, "Wizard.png", 128, 20, 40);
+    public Magic (int size) {
+        super(size, "Magic.png", 128, 20, 40);
     }
     
     /**

@@ -9,6 +9,7 @@ public class Projectile extends Actor
 {
     // instance variables - replace the example below with your own
     private Enemy target;
+    private int speed = 5;
 
     /**
      * Constructor for objects of class Projectile
@@ -18,25 +19,33 @@ public class Projectile extends Actor
     }
 
     public void act() {
+        if (getWorld() == null) return;
+        if (target == null || target.getWorld() == null) {
+            getWorld().removeObject(this);
+            return;
+        }
+        
         moveToTarget();
+        checkCollision();
     }
 
     public void moveToTarget()
     {
-        if (target == null)
-        {
-            getWorld().removeObject(this);
-            return;
-        }
-
         turnTowards(target.getX(), target.getY());
-        move(5);
+        move(speed);
+    }
+    
+    private void checkCollision() {
+        if (intersects(target)) {
+            World world = getWorld();
+            
+            if (target.getWorld() != null) {
+                world.removeObject(target);
+            }
 
-        if (intersects(target))
-        {
-            getWorld().removeObject(target);
-
-            getWorld().removeObject(this);
+            if (getWorld() != null) {
+                world.removeObject(this);
+            }
         }
     }
 }
