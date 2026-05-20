@@ -131,6 +131,7 @@ public class GameWorld extends World
         */
         addObject(new Button(ButtonType.PLAY, null), 900, 500);
         addObject(new Button(ButtonType.BOW, TowerType.BOW), 900, 150);
+        addObject(new Button(ButtonType.MAGIC, TowerType.MAGIC), 900, 200);
     }
     
     public boolean getPaused() {

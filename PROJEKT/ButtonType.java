@@ -1,8 +1,8 @@
 public enum ButtonType {
     PLAY("PlayButton.png"),
     BOW("Bow.png"),
+    MAGIC("Magic.png"),
     CANON("Canon.png"),
-    ELECTRO("Electro.png"),
     SNIPER("Sniper.png");
 
     private final String image;
