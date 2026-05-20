@@ -100,7 +100,11 @@ readme.name=@README
 readme.width=49
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 simulation.speed=48
+=======
+simulation.speed=51
+>>>>>>> 68b6989f784e1876863b0aa12f33443149159cae
 target1.height=70
 target1.name=Path
 target1.showInterface=false
