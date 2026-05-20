@@ -15,16 +15,25 @@ public class Grass extends Tile {
     
     public void act() {
         
-        if (Greenfoot.mouseClicked(this)) {
+        GameWorld world = (GameWorld) getWorld();
+        
+        if (Greenfoot.mouseClicked(this) && world.getSelectedTower() != null) {
             
-            GameWorld world = (GameWorld) getWorld();
+            placeTower(world.getSelectedTower());
+        }
+    }
+    
+    private void placeTower(TowerType towerType) {
+        
+        GameWorld world = (GameWorld) getWorld();
+        
+        if (!isOccupied() && world.getBalance() >= towerType.getCost()) {
             
-            if (world.getSelectedButton() == ButtonType.BOW && !isOccupied()) {
-                world.addObject(new Tower(GameConstants.TILE_SIZE, TowerType.BOW), getX(), getY());
-                setOccupied(true);
-                //world.setSelectedButton(GameConstants.NONE);
-                world.setSelectedButton(ButtonType.NONE);
-            }
+            world.addObject(new Tower(GameConstants.TILE_SIZE, towerType), getX(), getY());
+            setOccupied(true);
+            world.adjustBalance(-towerType.getCost());
+            //world.setSelectedButton(GameConstants.NONE);
+            world.setSelectedTower(null);
         }
     }
 }

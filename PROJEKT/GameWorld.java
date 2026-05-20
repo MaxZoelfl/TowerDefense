@@ -40,8 +40,10 @@ public class GameWorld extends World
     //Game Dynamics
 
     protected boolean paused;
-    protected ButtonType selectedButton;
     protected int speed;
+    protected TowerType selectedTower;
+    protected int playerHealth;
+    protected int balance;
 
     public GameWorld()
     {
@@ -50,10 +52,11 @@ public class GameWorld extends World
         
         createButtons();
 
-        paused = true;  //PROVISIONAL
-        //selectedButton = GameConstants.NONE;
-        selectedButton = ButtonType.NONE;
-        speed = 1;
+        paused = true;
+        speed = 1;  // PROVISIONAL
+        selectedTower = null;  //selectedButton = GameConstants.NONE;
+        playerHealth = 5;  // PROVISIONAL
+        balance = 1000;
         
         // Beispiel BowTower bzw Arrow
         Tower t = new Tower(GameConstants.TILE_SIZE, TowerType.MAGIC);
@@ -126,39 +129,48 @@ public class GameWorld extends World
         addObject(new Button(GameConstants.PLAY), 900, 500);
         addObject(new Button(GameConstants.BOW), 900, 150);
         */
-        addObject(new Button(ButtonType.PLAY), 900, 500);
-        addObject(new Button(ButtonType.BOW), 900, 150);
+        addObject(new Button(ButtonType.PLAY, null), 900, 500);
+        addObject(new Button(ButtonType.BOW, TowerType.BOW), 900, 150);
     }
     
     public boolean getPaused() {
         return paused;
     }
-    
     public void setPaused() {
-        
-        if (paused == true) {
-            paused = false;
-        }
-        else {
-            paused = true;
-        }
+        paused = !paused;
     }
     
+    /*
     public ButtonType getSelectedButton() {
         return selectedButton;
     }
-
     public void setSelectedButton(ButtonType buttonType) {
         selectedButton = buttonType;
     }
+     */
+    
+    public TowerType getSelectedTower() {
+        return selectedTower;
+    }
+    public void setSelectedTower(TowerType towerType) {
+        selectedTower = towerType;
+    }
+    
+    public int getPlayerHealth() {
+        return playerHealth;
+    }
+    public void adjustPlayerHealth(int adjustment) {
+        playerHealth += adjustment;
+    }
+    
+    public int getBalance() {
+        return balance;
+    }
+    public void adjustBalance(int adjustment) {
+        balance += adjustment;
+    }
 
     public void act() {
-        
-        if (selectedButton == ButtonType.PLAY) {
-            
-            setPaused();
-            selectedButton = ButtonType.NONE;
-        }
         
         if (paused == false) {
             
@@ -169,4 +181,3 @@ public class GameWorld extends World
         }
     }
 }
-

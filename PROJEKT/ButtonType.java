@@ -1,5 +1,4 @@
 public enum ButtonType {
-    NONE(""),
     PLAY("PlayButton.png"),
     BOW("Bow.png"),
     CANON("Canon.png"),

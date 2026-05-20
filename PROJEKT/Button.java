@@ -4,9 +4,11 @@ public class Button extends Actor
 {
     
     protected ButtonType buttonType;
+    protected TowerType towerType;
 
-    public Button(ButtonType buttonType) {
+    public Button(ButtonType buttonType, TowerType towerType) {
         this.buttonType = buttonType;
+        this.towerType = towerType;
         setImage(buttonType.getImage());
     }
     
@@ -31,7 +33,14 @@ public class Button extends Actor
         if (Greenfoot.mouseClicked(this)) {
             
             GameWorld world = (GameWorld) getWorld();
-            world.setSelectedButton(buttonType);
+            
+            if (buttonType == ButtonType.PLAY) {
+                world.setPaused();
+            }
+            
+            else {
+                world.setSelectedTower(towerType);
+            }
         }
     }
 
