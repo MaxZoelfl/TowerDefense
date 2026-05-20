@@ -19,7 +19,7 @@ public class Projectile extends Actor
     /**
      * Constructor for objects of class Projectile
      */
-    public Projectile(ProjectileType projectileType, Enemy target, int Damage) {
+    public Projectile(ProjectileType projectileType, Enemy target, int damage) {
         this.projectileType = projectileType;
         
         setImage(projectileType.getImage());

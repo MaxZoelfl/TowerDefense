@@ -1,5 +1,5 @@
 public enum EnemyType {
-    // TOWER(Health, Speed, Bounty, Image),
+    // TOWER(Health, bounty, speed, Image),
     RAT(100, 10, 1, "Rat.png"),
     ENEMY2(100, 10, 1, ""),
     ENEMY3(100, 10, 1, ""),

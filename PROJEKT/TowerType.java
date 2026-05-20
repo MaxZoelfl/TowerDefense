@@ -1,7 +1,7 @@
 public enum TowerType {
     // TOWER(cost, damage, range, cooldown,ProjectileType, image),
     BOW(100, 10, 128, 10, ProjectileType.BOW, "Bow.png"),
-    MAGIC(100, 10, 128, 10, ProjectileType.MAGIC, "Magic.png"),
+    MAGIC(100, 10, 128, 25, ProjectileType.MAGIC, "Magic.png"),
     CANON(100, 10, 128, 10, ProjectileType.CANON, "Canon.png"),
     SNIPER(100, 10, 128, 10, ProjectileType.SNIPER, "Sniper.png");
 

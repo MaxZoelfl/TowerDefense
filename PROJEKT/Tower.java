@@ -19,6 +19,7 @@ public class Tower extends Actor
      */
     public Tower(int size, TowerType towerType) {
         this.towerType = towerType;
+        this.cooldownTimer = 0;
 
         GreenfootImage img = new GreenfootImage(towerType.getImage());
         img.scale(size, size);
@@ -26,15 +27,16 @@ public class Tower extends Actor
     }
 
     public void act() {
-        cooldownTimer--;
+        if (cooldownTimer > 0) {
+            cooldownTimer--;
+        }
 
-        if (cooldownTimer <= 0) {
+        if (cooldownTimer == 0) {
             attack();
         }
     }
 
     public void attack() {
-
         List<Enemy> enemies = getObjectsInRange(towerType.range, Enemy.class);
 
         target = null;
