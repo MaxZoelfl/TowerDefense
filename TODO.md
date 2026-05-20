@@ -1,8 +1,6 @@
 # TO DO
 
-- HP system (Leon)
-- Money system (Leon)
-- Play/Pause button (Leon)
+- Player HP system (Leon)
 - Enemy mechanics (Max):
   - Health (HP enemies) Meachnic
 - Tower mechanics (Max):
@@ -10,18 +8,22 @@
 
 # IN PROGRESS
 
-- 'Place tower' button (Leon)
+- Money system (Leon)
+- Player Interface implementation (Leon)
+- Player Interface design (Leopold)
+- Enemy Design (Leopold)
+- Button Design (Leopold)
 - Enemy mechanics (Max)
 - Tower + Projectile mechanics (Max):
   - Projectile Schießen + Enemy Treffen
-- Enemy Design (Leopold)
-- Button Design (Leopold)
 
 # DONE
 
 - Grass and Path Tiles (Leopold)
-- Tile & Map implementation (basis Logik: Max, besser: Leon)
+- Play/Pause button (Leon)
+- 'Place tower' button (Leon)
+- Tile & Map implementation (basis Logik: Max, Besser: Leon)
 - Umwandlung von Unterklassen in enum-typen (Max)
 - Enemy mechanics (Max):
   - Pfad Folgen + drehen
-- Tower + Projectile mechanics (Max):
+- Tower + Projectile mechanics (Max)
