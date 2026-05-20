@@ -27,12 +27,18 @@ public class Tower extends Actor
     }
 
     public void act() {
-        if (cooldownTimer > 0) {
-            cooldownTimer--;
-        }
-
-        if (cooldownTimer == 0) {
-            attack();
+        
+        GameWorld world = (GameWorld) getWorld();
+        
+        if (world.getPaused() == false) {
+            
+            if (cooldownTimer > 0) {
+                cooldownTimer--;
+            }
+    
+            if (cooldownTimer == 0) {
+                attack();
+            }
         }
     }
 

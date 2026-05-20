@@ -50,7 +50,7 @@ public class GameWorld extends World
         
         createButtons();
 
-        paused = false;  //PROVISIONAL
+        paused = true;  //PROVISIONAL
         //selectedButton = GameConstants.NONE;
         selectedButton = ButtonType.NONE;
         speed = 1;
@@ -130,6 +130,20 @@ public class GameWorld extends World
         addObject(new Button(ButtonType.BOW), 900, 150);
     }
     
+    public boolean getPaused() {
+        return paused;
+    }
+    
+    public void setPaused() {
+        
+        if (paused == true) {
+            paused = false;
+        }
+        else {
+            paused = true;
+        }
+    }
+    
     public ButtonType getSelectedButton() {
         return selectedButton;
     }
@@ -139,8 +153,19 @@ public class GameWorld extends World
     }
 
     public void act() {
-        for (Enemy e : getObjects(Enemy.class)) {
-            e.move(map);
+        
+        if (selectedButton == ButtonType.PLAY) {
+            
+            setPaused();
+            selectedButton = ButtonType.NONE;
+        }
+        
+        if (paused == false) {
+            
+             for (Enemy e : getObjects(Enemy.class)) {
+                 
+                e.move(map);
+            }
         }
     }
 }
