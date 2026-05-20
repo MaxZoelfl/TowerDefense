@@ -1,4 +1,5 @@
 public enum ProjectileType {
+    // PTOWER(damage von tower, image)
     BOW("BowProjectile.png"),
     MAGIC("MagicProjectile.png"),
     CANON("CanonProjectile.png"),

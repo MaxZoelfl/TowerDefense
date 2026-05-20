@@ -9,8 +9,11 @@ public class Projectile extends Actor
 {
     // instance variables - replace the example below with your own
     protected ProjectileType projectileType;
+    
     private Enemy target;
+    
     private int damage;
+    
     private int speed = 5;
 
     /**
@@ -18,6 +21,7 @@ public class Projectile extends Actor
      */
     public Projectile(ProjectileType projectileType, Enemy target, int Damage) {
         this.projectileType = projectileType;
+        
         setImage(projectileType.getImage());
         
         this.target = target;
@@ -35,8 +39,7 @@ public class Projectile extends Actor
         checkCollision();
     }
 
-    public void moveToTarget()
-    {
+    public void moveToTarget() {
         turnTowards(target.getX(), target.getY());
         move(speed);
     }
@@ -46,7 +49,10 @@ public class Projectile extends Actor
             World world = getWorld();
             
             if (target.getWorld() != null) {
-                world.removeObject(target);
+                target.health -= damage;
+                if (target.health <= 0) {
+                    world.removeObject(target);
+                }
             }
 
             if (getWorld() != null) {

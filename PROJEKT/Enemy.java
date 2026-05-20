@@ -8,9 +8,9 @@ import greenfoot.*;
 public class Enemy extends Actor
 {
     // instance variables - replace the example below with your own
-    private int health;
-    private int speed; // WICHTIG: muss ein Teiler von TILE_SIZE sein. (z.B. 2, 4, 8, 12, etc.)
-    private int bounty;
+    protected EnemyType enemyType;
+    
+    public int health;
 
     private int pathIndex = 0;
     private int tileSize;
@@ -19,11 +19,13 @@ public class Enemy extends Actor
     /**
      * Constructor for objects of class Enemy
      */
-    public Enemy(int size, String image, int speed) {
-        this.tileSize = size;
-        this.speed = speed;
+    public Enemy(int size, EnemyType enemyType) {
+        this.enemyType = enemyType;
+        this.health = enemyType.health;
         
-        GreenfootImage img = new GreenfootImage(image);
+        this.tileSize = size;
+        
+        GreenfootImage img = new GreenfootImage(enemyType.image);
         img.scale(size, size);
         setImage(img);
     }
@@ -47,9 +49,7 @@ public class Enemy extends Actor
         int centerY = tileY * tileSize + tileSize / 2;
 
         // Prüfen ob Gegner nahe genug am Mittelpunkt des aktuellen Tiles ist
-        if (Math.abs(getX() - centerX) < speed &&
-        Math.abs(getY() - centerY) < speed)
-        {
+        if (Math.abs(getX() - centerX) < enemyType.speed && Math.abs(getY() - centerY) < enemyType.speed) {
             // Exakt auf Mittelpunkt setzen
             setLocation(centerX, centerY);
 
@@ -61,13 +61,12 @@ public class Enemy extends Actor
         int dx = 0;
         int dy = 0;
 
-        switch (direction)
-        {
+        switch (direction) {
                 // RECHTS
             case 1:
             case 9:
             case 11:
-                dx = speed;
+                dx = enemyType.speed;
                 setRotation(0);
                 break;
 
@@ -75,7 +74,7 @@ public class Enemy extends Actor
             case 2:
             case 10:
             case 12:
-                dx = -speed;
+                dx = -enemyType.speed;
                 setRotation(180);
                 break;
 
@@ -83,7 +82,7 @@ public class Enemy extends Actor
             case 3:
             case 6:
             case 8:
-                dy = -speed;
+                dy = -enemyType.speed;
                 setRotation(270);
                 break;
 
@@ -91,7 +90,7 @@ public class Enemy extends Actor
             case 4:
             case 5:
             case 7:
-                dy = speed;
+                dy = enemyType.speed;
                 setRotation(90);
                 break;
 
@@ -102,9 +101,5 @@ public class Enemy extends Actor
         }
 
         setLocation(getX() + dx, getY() + dy);
-    }
-    
-    public void setRotation() {
-        
     }
 }

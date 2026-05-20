@@ -61,7 +61,7 @@ public class GameWorld extends World
         towers.add(t);
         
         // Beispiel Enemy + Lauftest
-        Enemy e = new Rat(GameConstants.TILE_SIZE, 1);
+        Enemy e = new Enemy(GameConstants.TILE_SIZE, EnemyType.RAT);
         addObject(e, startX, startY);
         enemies.add(e);
     }
