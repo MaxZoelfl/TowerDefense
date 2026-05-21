@@ -1,16 +1,22 @@
 public enum ProjectileType {
-    // PTOWER(damage von tower, image)
-    BOW("BowProjectile.png"),
-    MAGIC("MagicProjectile.png"),
-    CANON("CanonProjectile.png"),
-    SNIPER("SniperProjectile.png");
+    // PTOWER(splashRadius, image)
+    BOW(0, "BowProjectile.png"),
+    MAGIC(300, "MagicProjectile.png"),
+    CANON(32, "CanonProjectile.png"),
+    SNIPER(0, "SniperProjectile.png");
 
+    private final int splashRadius;
     private final String image;
 
-    ProjectileType(String image) {
+    ProjectileType(int splashRadius, String image) {
+        this.splashRadius = splashRadius;
         this.image = image;
     }
 
+    public int getSplashRadius() {
+        return splashRadius;
+    }
+    
     public String getImage() {
         return image;
     }

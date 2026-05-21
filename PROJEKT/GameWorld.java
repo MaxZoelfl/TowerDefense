@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class GameWorld extends World
 {   
-    
+
     /* Map Mechanic:
      *  0 -> Gras
      *  1 -> rechts
@@ -49,7 +49,7 @@ public class GameWorld extends World
     {
         super(16 * GameConstants.TILE_SIZE, 9 * GameConstants.TILE_SIZE, 1);
         createMap();
-        
+
         createButtons();
 
         paused = true;
@@ -57,16 +57,18 @@ public class GameWorld extends World
         selectedTower = null;
         playerHealth = 5;  // PROVISIONAL
         balance = 1000;
-        
+
         // Beispiel BowTower bzw Arrow
         Tower t = new Tower(GameConstants.TILE_SIZE, TowerType.MAGIC);
         addObject(t, 5 * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2, 5 * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2);
         towers.add(t);
-        
+
         // Beispiel Enemy + Lauftest
+
         Enemy e = new Enemy(GameConstants.TILE_SIZE, EnemyType.RAT);
         addObject(e, startX, startY);
         enemies.add(e);
+
     }
 
     public void createMap() {
@@ -74,48 +76,48 @@ public class GameWorld extends World
             for (int x = 0; x < map[y].length; x++) {
                 int tileType = map[y][x];
                 Tile tile;
-                
+
                 switch (tileType) {
                     case 0: //Grass
                         tile = new Grass(GameConstants.TILE_SIZE);
                         break;
-                        
+
                     case 1:  //rechts
                     case 2:  //links
                         tile = new Path(GameConstants.TILE_SIZE, 0);
                         break;
-                        
+
                     case 3:  //hoch
                     case 4:  //runter
                     case 13: //Ziel
                         tile = new Path(GameConstants.TILE_SIZE, 90);
                         break;
-                        
+
                     case 5:  //links>runter
                     case 10: //unten>links
                         tile = new PathCorner(GameConstants.TILE_SIZE, 0);
                         break;
-                        
+
                     case 6:  //links>hoch
                     case 12: //oben>links
                         tile = new PathCorner(GameConstants.TILE_SIZE, 90);
                         break;
-                        
+
                     case 7:  //rechts>runter
                     case 9:  //unten>rechts
                         tile = new PathCorner(GameConstants.TILE_SIZE, 270);
                         break;
-                        
+
                     case 8:  //rechts>hoch
                     case 11: //oben>rechts
                         tile = new PathCorner(GameConstants.TILE_SIZE, 180);
                         break;
-                        
+
                     default:
                         tile = new Grass(GameConstants.TILE_SIZE);
                         break;
                 }
-                
+
                 addObject(tile, 
                     x * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2, 
                     y * GameConstants.TILE_SIZE + GameConstants.TILE_SIZE/2
@@ -128,46 +130,53 @@ public class GameWorld extends World
         /*
         addObject(new Button(GameConstants.PLAY), 900, 500);
         addObject(new Button(GameConstants.BOW), 900, 150);
-        */
+         */
         addObject(new Button(ButtonType.PLAY, null), 900, 500);
         addObject(new Button(ButtonType.BOW, TowerType.BOW), 900, 150);
         addObject(new Button(ButtonType.MAGIC, TowerType.MAGIC), 900, 200);
     }
-    
+
     public boolean getPaused() {
         return paused;
     }
+
     public void setPaused() {
         paused = !paused;
     }
-    
+
     public TowerType getSelectedTower() {
         return selectedTower;
     }
+
     public void setSelectedTower(TowerType towerType) {
         selectedTower = towerType;
     }
-    
+
     public int getPlayerHealth() {
         return playerHealth;
     }
+
     public void adjustPlayerHealth(int adjustment) {
         playerHealth += adjustment;
     }
-    
+
     public int getBalance() {
         return balance;
     }
+
     public void adjustBalance(int adjustment) {
         balance += adjustment;
     }
 
     public void act() {
+        // Enemy e1 = new Enemy(GameConstants.TILE_SIZE, EnemyType.RAT);
+        // addObject(e1, startX, startY);
+        // enemies.add(e1);
         
         if (paused == false) {
-            
-             for (Enemy e : getObjects(Enemy.class)) {
-                 
+
+            for (Enemy e : getObjects(Enemy.class)) {
+
                 e.move(map);
             }
         }

@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.target=ProjectileType
-comment1.params=image
-comment1.target=ProjectileType(java.lang.String)
+comment1.params=splashRadius\ image
+comment1.target=ProjectileType(int,\ java.lang.String)
 comment2.params=
-comment2.target=java.lang.String\ getImage()
-numComments=3
+comment2.target=int\ getSplashRadius()
+comment3.params=
+comment3.target=java.lang.String\ getImage()
+numComments=4

@@ -3,12 +3,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 public class Enemy extends Actor
 {
     protected EnemyType enemyType;
-    
+
     public int health;
 
     private int pathIndex = 0;
     private int tileSize;
     private int direction = 1;
+
+    private int lastTileX = -1;
+    private int lastTileY = -1;
 
     /**
      * Constructor for objects of class Enemy
@@ -16,9 +19,9 @@ public class Enemy extends Actor
     public Enemy(int size, EnemyType enemyType) {
         this.enemyType = enemyType;
         this.health = enemyType.health;
-        
+
         this.tileSize = size;
-        
+
         GreenfootImage img = new GreenfootImage(enemyType.image);
         img.scale(size, size);
         setImage(img);
@@ -35,9 +38,16 @@ public class Enemy extends Actor
 
     public void move(int[][] map) {
         if (getWorld() == null) return;
-        
+
         int tileX = getX() / tileSize;
         int tileY = getY() / tileSize;
+
+        if (tileX != lastTileX || tileY != lastTileY) {
+            pathIndex++;
+
+            lastTileX = tileX;
+            lastTileY = tileY;
+        }
 
         int centerX = tileX * tileSize + tileSize / 2;
         int centerY = tileY * tileSize + tileSize / 2;
