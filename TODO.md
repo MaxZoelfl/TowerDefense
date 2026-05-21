@@ -2,7 +2,6 @@
 
 - Player HP system (Leon)
 - Enemy mechanics (Max):
-  - Health (HP enemies) Meachnic
 - Tower mechanics (Max):
   - Cooldown Mechanic
 
@@ -27,4 +26,7 @@
 - Umwandlung von Unterklassen in enum-typen (Max)
 - Enemy mechanics (Max):
   - Pfad Folgen + drehen
-- Tower + Projectile mechanics (Max)
+  - - Health (HP enemies) Meachnic
+- Tower + Projectile mechanics (Max):
+  - Attack, Shoot, Check Collision, remove Projectile + target Enemy
+  - Splash Damage
