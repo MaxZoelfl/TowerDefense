@@ -9,6 +9,7 @@
 # IN PROGRESS
 
 - Money system (Leon)
+  - No visualisation yet
 - Player Interface implementation (Leon)
 - Player Interface design (Leopold)
 - Enemy Design (Leopold)
