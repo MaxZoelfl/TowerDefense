@@ -48,6 +48,7 @@ public class Tower extends Actor
 
         if (target != null) {
             shoot(target);
+            turnTowards(target.getX(), target.getY());
             cooldownTimer = towerType.cooldown;
         }
     }
