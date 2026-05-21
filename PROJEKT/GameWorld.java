@@ -54,7 +54,7 @@ public class GameWorld extends World
 
         paused = true;
         speed = 1;  // PROVISIONAL
-        selectedTower = null;  //selectedButton = GameConstants.NONE;
+        selectedTower = null;
         playerHealth = 5;  // PROVISIONAL
         balance = 1000;
         
@@ -140,15 +140,6 @@ public class GameWorld extends World
     public void setPaused() {
         paused = !paused;
     }
-    
-    /*
-    public ButtonType getSelectedButton() {
-        return selectedButton;
-    }
-    public void setSelectedButton(ButtonType buttonType) {
-        selectedButton = buttonType;
-    }
-     */
     
     public TowerType getSelectedTower() {
         return selectedTower;

@@ -18,7 +18,6 @@ comment5.params=
 comment5.target=void\ setPaused()
 comment6.params=
 comment6.target=TowerType\ getSelectedTower()
-comment6.text=\n\ \ \ \ public\ ButtonType\ getSelectedButton()\ {\n\ \ \ \ \ \ \ \ return\ selectedButton;\n\ \ \ \ }\n\ \ \ \ public\ void\ setSelectedButton(ButtonType\ buttonType)\ {\n\ \ \ \ \ \ \ \ selectedButton\ \=\ buttonType;\n\ \ \ \ }\n
 comment7.params=towerType
 comment7.target=void\ setSelectedTower(TowerType)
 comment8.params=

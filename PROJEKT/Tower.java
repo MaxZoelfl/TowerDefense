@@ -1,22 +1,13 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 import java.util.List;
-/**
- * Write a description of class Tower here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Tower extends Actor
 {
-    // instance variables - replace the example below with your own
     protected TowerType towerType;
     private int cooldownTimer;
 
     protected Enemy target;
 
-    /**
-     * Constructor for objects of class Tower
-     */
     public Tower(int size, TowerType towerType) {
         this.towerType = towerType;
         this.cooldownTimer = 0;

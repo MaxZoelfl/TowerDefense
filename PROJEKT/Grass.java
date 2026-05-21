@@ -1,10 +1,5 @@
-import greenfoot.*;
-/**
- * Write a description of class Gras here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+
 public class Grass extends Tile {
     
     public Grass(int size) {
@@ -32,7 +27,6 @@ public class Grass extends Tile {
             world.addObject(new Tower(GameConstants.TILE_SIZE, towerType), getX(), getY());
             setOccupied(true);
             world.adjustBalance(-towerType.getCost());
-            //world.setSelectedButton(GameConstants.NONE);
             world.setSelectedTower(null);
         }
     }

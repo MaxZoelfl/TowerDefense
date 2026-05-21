@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=PathCorner
-comment0.text=\n\ Erg\u00E4nzen\ Sie\ hier\ eine\ Beschreibung\ f\u00FCr\ die\ Klasse\ PathCorner.\n\ \n\ @author\ (Ihr\ Name)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
 comment1.params=size\ rotation
 comment1.target=PathCorner(int,\ int)
 numComments=2

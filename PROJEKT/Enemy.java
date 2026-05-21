@@ -1,13 +1,7 @@
-import greenfoot.*;
-/**
- * Write a description of class Enemy here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+
 public class Enemy extends Actor
 {
-    // instance variables - replace the example below with your own
     protected EnemyType enemyType;
     
     public int health;

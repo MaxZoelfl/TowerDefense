@@ -1,10 +1,5 @@
-import greenfoot.*;
-/**
- * Write a description of class Tile here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+
 public class Tile extends Actor {
     
     protected int size;
@@ -36,14 +31,3 @@ public class Tile extends Actor {
         this.occupied = occupied;
     }
 }
-
-/*
- *     public void drawTile(Color fillColor) {
-        GreenfootImage img = new GreenfootImage(size, size);
-        img.setColor(fillColor);
-        img.fill();
-        img.setColor(Color.BLACK);
-        img.drawRect(0, 0, size - 1, size - 1);
-        setImage(img);
-    }
- */

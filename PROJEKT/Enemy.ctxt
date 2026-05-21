@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Enemy
-comment0.text=\n\ Write\ a\ description\ of\ class\ Enemy\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=size\ enemyType
 comment1.target=Enemy(int,\ EnemyType)
 comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Enemy\n

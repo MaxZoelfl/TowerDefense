@@ -1,24 +1,12 @@
-import greenfoot.*;
-/**
- * Write a description of class Projectile here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+
 public class Projectile extends Actor
 {
-    // instance variables - replace the example below with your own
     protected ProjectileType projectileType;
-    
     private Enemy target;
-    
     private int damage;
-    
     private int speed = 5;
 
-    /**
-     * Constructor for objects of class Projectile
-     */
     public Projectile(ProjectileType projectileType, Enemy target, int damage) {
         this.projectileType = projectileType;
         

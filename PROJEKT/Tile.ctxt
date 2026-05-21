@@ -1,6 +1,5 @@
 #BlueJ class context
 comment0.target=Tile
-comment0.text=\n\ Write\ a\ description\ of\ class\ Tile\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=size\ image
 comment1.target=Tile(int,\ java.lang.String)
 comment2.params=

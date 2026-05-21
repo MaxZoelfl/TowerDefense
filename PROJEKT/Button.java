@@ -12,23 +12,6 @@ public class Button extends Actor
         setImage(buttonType.getImage());
     }
     
-    /*
-    public Button (int buttonType) {
-        this.buttonType = buttonType;
-        
-        switch(buttonType) {
-            
-            case GameConstants.PLAY:
-                setImage("PlayButton.png");
-                break;
-            
-            case GameConstants.BOW:
-                setImage("Bow.png");
-                break;
-        }
-    }
-    */
-    
     public void act () {
         if (Greenfoot.mouseClicked(this)) {
             
