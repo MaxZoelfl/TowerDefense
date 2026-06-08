@@ -4,4 +4,6 @@ comment1.params=health\ bounty\ speed\ image
 comment1.target=EnemyType(int,\ int,\ int,\ java.lang.String)
 comment2.params=
 comment2.target=java.lang.String\ getImage()
-numComments=3
+comment3.params=
+comment3.target=boolean\ isReady()
+numComments=4

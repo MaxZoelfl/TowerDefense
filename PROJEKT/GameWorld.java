@@ -29,10 +29,10 @@ public class GameWorld extends World
             { 0, 0, 0, 4, 0, 0, 3, 0, 0, 4, 0, 0},
             { 0, 0, 0,11, 1, 1, 6, 0, 0, 4, 0, 0},
             { 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0},
-            { 0, 0, 0, 0, 0, 0, 0, 0, 0,13, 0, 0},
+            { 0, 0, 0, 0, 0, 0, 0, 0, 0,14, 0, 0},
         };
-    private int startX = 0;
-    private int startY = 224;
+    protected int startX = 0;
+    protected int startY = 224;
 
     ArrayList<Enemy> enemies = new ArrayList<>();
     ArrayList<Tower> towers = new ArrayList<>();
@@ -41,6 +41,9 @@ public class GameWorld extends World
 
     protected boolean paused;
     protected int speed;
+    
+    private WaveManager waveManager;
+    
     protected TowerType selectedTower;
     protected int playerHealth;
     protected int balance;
@@ -52,7 +55,9 @@ public class GameWorld extends World
 
         createButtons();
 
+        waveManager = new WaveManager(this);
         paused = true;
+        
         speed = 1;  // PROVISIONAL
         selectedTower = null;
         playerHealth = 5;  // PROVISIONAL
@@ -65,9 +70,7 @@ public class GameWorld extends World
 
         // Beispiel Enemy + Lauftest
 
-        Enemy e = new Enemy(GameConstants.TILE_SIZE, EnemyType.RAT);
-        addObject(e, startX, startY);
-        enemies.add(e);
+        
 
     }
 
@@ -169,14 +172,10 @@ public class GameWorld extends World
     }
 
     public void act() {
-        // Enemy e1 = new Enemy(GameConstants.TILE_SIZE, EnemyType.RAT);
-        // addObject(e1, startX, startY);
-        // enemies.add(e1);
-        
-        if (paused == false) {
+        if (!paused) {
+            waveManager.update();                    // Wellen-Takt
 
             for (Enemy e : getObjects(Enemy.class)) {
-
                 e.move(map);
             }
         }

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Wave
+comment0.text=\n\ Eine\ Welle\ besteht\ aus\ mehreren\ WaveEntry-Gruppen.\n\ Beispiel\:\ Welle\ 3\ \=\ [5x\ RAT\ @\ delay\ 30]\ +\ [2x\ ENEMY2\ @\ delay\ 60]\n
+comment1.params=breakDuration
+comment1.target=Wave(int)
+comment2.params=enemyType\ count\ spawnDelay
+comment2.target=Wave\ add(EnemyType,\ int,\ int)
+comment2.text=\n\ F\u00FCgt\ eine\ Spawn-Gruppe\ zur\ Welle\ hinzu.\n\ R\u00FCckgabe\:\ this\ (Builder-Pattern\ f\u00FCr\ lesbare\ Verkettung)\n
+comment3.params=
+comment3.target=java.util.List\ getEntries()
+numComments=4

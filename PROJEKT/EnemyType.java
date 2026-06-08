@@ -20,4 +20,8 @@ public enum EnemyType {
     public String getImage() {
         return image;
     }
+    
+    public boolean isReady() {
+        return image != null && !image.isEmpty();
+    }
 }

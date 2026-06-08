@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=WaveEntry
+comment0.text=\n\ Beschreibt\ einen\ einzelnen\ Spawn-Eintrag\ innerhalb\ einer\ Welle.\n\ Beispiel\:\ 5x\ RAT\ mit\ je\ 30\ Ticks\ Abstand\n
+comment1.params=enemyType\ count\ spawnDelay
+comment1.target=WaveEntry(EnemyType,\ int,\ int)
+numComments=2
