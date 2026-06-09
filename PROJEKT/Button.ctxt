@@ -4,4 +4,6 @@ comment1.params=buttonType\ towerType
 comment1.target=Button(ButtonType,\ TowerType)
 comment2.params=
 comment2.target=void\ act()
-numComments=3
+comment3.params=highlighted
+comment3.target=void\ drawButton(boolean)
+numComments=4

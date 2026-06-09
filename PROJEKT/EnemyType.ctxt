@@ -6,4 +6,5 @@ comment2.params=
 comment2.target=java.lang.String\ getImage()
 comment3.params=
 comment3.target=boolean\ isReady()
+comment3.text=Nur\ spawnbar\ wenn\ ein\ Bild\ hinterlegt\ ist
 numComments=4

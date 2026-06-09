@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=GameOverScreen
+comment0.text=\n\ GameOverScreen\ \u2014\ Overlay\ bei\ Game\ Over\ oder\ Sieg.\n\ Klick\ auf\ das\ Panel\ startet\ das\ Spiel\ neu.\n
+comment1.params=victory
+comment1.target=GameOverScreen(boolean)
+comment2.params=
+comment2.target=void\ buildImage()
+comment3.params=
+comment3.target=void\ act()
+numComments=4

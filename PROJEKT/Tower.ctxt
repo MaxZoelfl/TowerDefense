@@ -6,6 +6,6 @@ comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ attack()
-comment4.params=target
+comment4.params=t
 comment4.target=void\ shoot(Enemy)
 numComments=5

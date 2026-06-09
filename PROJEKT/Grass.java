@@ -1,29 +1,26 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.*;
 
 public class Grass extends Tile {
-    
+
     public Grass(int size) {
         super(size, "Grass.png");
-        
         setBuildable(true);
     }
-    
+
     public void act() {
-        
         GameWorld world = (GameWorld) getWorld();
-        
+        if (world == null) return;
+
         if (Greenfoot.mouseClicked(this) && world.getSelectedTower() != null) {
-            
             placeTower(world.getSelectedTower());
         }
     }
-    
+
     private void placeTower(TowerType towerType) {
-        
         GameWorld world = (GameWorld) getWorld();
-        
+        if (world == null) return;
+
         if (!isOccupied() && world.getBalance() >= towerType.getCost()) {
-            
             world.addObject(new Tower(GameConstants.TILE_SIZE, towerType), getX(), getY());
             setOccupied(true);
             world.adjustBalance(-towerType.getCost());

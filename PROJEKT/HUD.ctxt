@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=HUD
+comment0.text=\n\ HUD\ \u2014\ Anzeige\ von\ Leben,\ Gold,\ Wellenstatus\ in\ der\ Sidebar.\n\ Platzierung\:\ addObject(hud,\ GameConstants.SIDEBAR_CENTER_X,\ 85)\n
+comment1.params=
+comment1.target=HUD()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=health\ balance\ wave\ total\ paused\ inBreak\ breakTimer
+comment3.target=void\ drawPanel(int,\ int,\ int,\ int,\ boolean,\ boolean,\ int)
+numComments=4

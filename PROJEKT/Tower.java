@@ -1,45 +1,34 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
+import greenfoot.*;
 import java.util.List;
 
-public class Tower extends Actor
-{
-    protected TowerType towerType;
-    private int cooldownTimer;
+public class Tower extends Actor {
 
+    protected TowerType towerType;
+    private int cooldownTimer = 0;
     protected Enemy target;
 
     public Tower(int size, TowerType towerType) {
         this.towerType = towerType;
-        this.cooldownTimer = 0;
-
         GreenfootImage img = new GreenfootImage(towerType.getImage());
         img.scale(size, size);
         setImage(img);
     }
 
     public void act() {
-        
         GameWorld world = (GameWorld) getWorld();
-        
-        if (world.getPaused() == false) {
-            
-            if (cooldownTimer > 0) {
-                cooldownTimer--;
-            }
-    
-            if (cooldownTimer == 0) {
-                attack();
-            }
-        }
+        if (world == null || world.getPaused()) return;
+
+        if (cooldownTimer > 0) { cooldownTimer--; return; }
+        attack();
     }
 
     public void attack() {
-        List<Enemy> enemies = getObjectsInRange(towerType.range, Enemy.class);
-
+        List<Enemy> inRange = getObjectsInRange(towerType.range, Enemy.class);
         target = null;
         int maxProgress = -1;
 
-        for (Enemy e : enemies) {
+        // Gegner mit höchstem Pfad-Fortschritt wird priorisiert
+        for (Enemy e : inRange) {
             if (e.getPathIndex() > maxProgress) {
                 maxProgress = e.getPathIndex();
                 target = e;
@@ -47,14 +36,14 @@ public class Tower extends Actor
         }
 
         if (target != null) {
-            shoot(target);
             turnTowards(target.getX(), target.getY());
+            shoot(target);
             cooldownTimer = towerType.cooldown;
         }
     }
 
-    public void shoot(Enemy target) {
-        Projectile p = new Projectile(towerType.projectileType, target, towerType.damage);
+    public void shoot(Enemy t) {
+        Projectile p = new Projectile(towerType.projectileType, t, towerType.damage);
         getWorld().addObject(p, getX(), getY());
     }
 }

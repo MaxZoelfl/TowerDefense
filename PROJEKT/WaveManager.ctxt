@@ -1,14 +1,12 @@
 #BlueJ class context
 comment0.target=WaveManager
-comment0.text=\n\ WaveManager\ \u2014\ verwaltet\ alle\ Wellen\ und\ spawnt\ Enemies\ getaktet.\n\n\ Integration\ in\ GameWorld\:\n\ \ \ 1.\ Feld\ anlegen\:\ \ \ \ \ \ \ \ private\ WaveManager\ waveManager;\n\ \ \ 2.\ Im\ Konstruktor\:\ \ \ \ \ \ waveManager\ \=\ new\ WaveManager(this);\n\ \ \ 3.\ In\ act()\:\ \ \ \ \ \ \ \ \ \ \ \ if\ (\!paused)\ waveManager.update();\n\n\ Spawn-Position\:\ startX\ /\ startY\ aus\ GameWorld.\n
+comment0.text=\n\ WaveManager\ \u2014\ verwaltet\ alle\ Wellen\ und\ spawnt\ Enemies\ getaktet.\n\n\ Integration\ in\ GameWorld\:\n\ \ \ 1.\ Feld\:\ \ \ \ \ \ \ \ private\ WaveManager\ waveManager;\n\ \ \ 2.\ Konstruktor\:\ waveManager\ \=\ new\ WaveManager(this);\n\ \ \ 3.\ In\ act()\:\ \ \ \ if\ (\!paused)\ waveManager.update();\n
 comment1.params=
 comment1.target=java.util.List\ buildWaves()
 comment10.params=
 comment10.target=int\ getBreakTimer()
-comment10.text=Verbleibende\ Pause-Ticks
 comment11.params=
 comment11.target=boolean\ isAllWavesDone()
-comment11.text=true\ wenn\ alle\ Wellen\ abgeschlossen
 comment2.params=world
 comment2.target=WaveManager(GameWorld)
 comment3.params=
@@ -21,11 +19,8 @@ comment6.params=type
 comment6.target=void\ spawnEnemy(EnemyType)
 comment7.params=
 comment7.target=int\ getCurrentWaveNumber()
-comment7.text=Aktuelle\ Wellennummer\ (1-basiert,\ f\u00FCr\ Anzeige)
 comment8.params=
 comment8.target=int\ getTotalWaves()
-comment8.text=Gesamtanzahl\ Wellen
 comment9.params=
 comment9.target=boolean\ isInBreak()
-comment9.text=true\ w\u00E4hrend\ der\ Pause\ zwischen\ zwei\ Wellen
 numComments=12
