@@ -19,8 +19,8 @@
 ```mermaid
 ---
 config:
-    look: handDrawn
-    theme: forest
+    look: basic
+    theme: default
 ---
 classDiagram
     direction LR
