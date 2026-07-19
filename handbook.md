@@ -20,7 +20,7 @@
 ---
 config:
     look: handDrawn
-    theme: default
+    theme: forest
 ---
 classDiagram
     direction LR
